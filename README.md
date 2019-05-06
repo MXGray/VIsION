@@ -2,7 +2,7 @@ This aims to provide visually impaired users with an affordable solution for the
 
 Being completely blind myself, this can help me know the objects in front of me, their placement and the distance of my central focus, with or without an Internet connection.
 
-This video shows the target objectives of this project:  https://www.youtube.com/watch?v=NIZj7IW-FDk?rel=0
+This video shows the target objectives of this project:  https://www.youtube.com/tv#/watch?v=NIZj7IW-FDk
 
 A wearable form factor will free up both our hands and give us optimum mobility.
 -  This is unlike the difficulty we experience when we need to take out our smartphones from time to time while walking around and holding our white canes;
