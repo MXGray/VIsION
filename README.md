@@ -25,3 +25,5 @@ I'm still working on offline OCR functions, mainly document detection and super-
 -  I'll continue to test and improve my trained / fine-tuned Tesseract model; and
 -  I'll further optimize the hardware components and software features of my project.
 
+Also, this live video is for San Francisco Lighthouse for the Blind's annual Holman Prize 2019 competition (ongoing as of this writing):  https://www.youtube.com/tv#/watch?v=A5O-R_WJDgQ
+-  This project was hand-picked this April 2019 as a semifinalist out of more than 110 participants across 6 continents.
