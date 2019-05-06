@@ -8,7 +8,7 @@ A wearable form factor will free up both our hands and give us optimum mobility.
 -  I also want a solution that won't require me to take out my smartphone while walking around, especially here in the Philippines where I can be victimized by violent crooks who are out to steal expensive smartphones from random passersby (my blindness is due to a senseless incident of violence 15 years ago).
 
 For offline multiple object detection and recognition, I used the following:
--  A fine-tuned object detection and recognition, person / face detection and age / gender estimation AI models; along with
+-  A set of fine-tuned object detection and recognition, person / face detection and age / gender estimation AI models; along with
 -  Custom scripts for distance estimation through an ultrasonic sensor and clockface object placement description through image post-processing.
 
 I also used services from Microsoft Cognitive Services (Computer Vision & Batch Read File APIs) and Cloudsight to integrate online object recognition, visual scene description and OCR (optical character recognition) functions.
