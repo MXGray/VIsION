@@ -1,3 +1,5 @@
+<p><a href="https://github.com/MXGray/VIsION/blob/master/AnimatedVIsIONLogo_1920x1080.gif" target="_blank"><img src="https://github.com/MXGray/VIsION/blob/master/AnimatedVIsIONLogo_1920x1080.gif" border="0" alt="Animated VIsION Logo: This is an image of a closed camera lens that opens up to show the word VIsION and closes back again, in a loop." width="480" height="270" align="left" HSPACE="30" VSPACE="30" /></a><h2>VIsION</h2><br>Wearable AI for the Blind<br></p>
+
 This aims to provide visually impaired users with an affordable solution for their day-to-day activities.
 
 Being completely blind myself, this can help me know the objects in front of me, their placement and the distance of my central focus, with or without an Internet connection.
@@ -27,3 +29,4 @@ I'm still working on offline OCR functions, mainly document detection and super-
 
 Also, this live video is for San Francisco Lighthouse for the Blind's annual Holman Prize 2019 competition (ongoing as of this writing):  https://www.youtube.com/tv#/watch?v=A5O-R_WJDgQ
 -  This project was hand-picked this April 2019 as a semifinalist out of more than 110 participants across 6 continents.
+  
