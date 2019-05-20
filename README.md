@@ -14,18 +14,63 @@
 <br>
 
 <table border="1" cellpadding="10">
-<tr><th>VIEW</th><th>RAW PROTOTYPE</th><th>3D PRINTED PROTOTYPE</th></tr>
-<tr><td>Front (Worn by User)</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView_BlindUserWearingVIsIONGlasses.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView_BlindUserWearingVIsIONGlasses.png" width="372" height="266" alt="Front and center photo of blind user wearing VIsION glasses with labels of already tested 8 megapixel camera, noise-cancelling mic and sonar sensor." title="Front and center photo of blind user wearing VIsION glasses with labels of already tested 8 megapixel camera, noise-cancelling mic and sonar sensor." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Front Right (Worn by User)</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFrontRightView_BlindUserWearingVIsIONGlasses.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFrontRightView_BlindUserWearingVIsIONGlasses.png" width="372" height="266" alt="Front right photo of blind user wearing VIsION glasses with labels of already tested 8 megapixel camera, noise-cancelling mic, sonar sensor and wireless earbud." title="Front right photo of blind user wearing VIsION glasses with labels of already tested 8 megapixel camera, noise-cancelling mic, sonar sensor and wireless earbud." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Top (RPi Version)</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_RaspberryPiWVersion.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_RaspberryPiWVersion.png" width="372" height="266" alt="Full top photo of VIsION glasses (RPi version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and tiny single board Raspberry Pi Zero W computer, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." title="Full top photo of VIsION glasses (RPi version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and tiny single board Raspberry Pi Zero W computer, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Top (ICS Version)</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_IntelComputeStickVersion.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_IntelComputeStickVersion.png" width="372" height="266" alt="Full top photo of VIsION glasses (ICS version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and small Intel Compute Stick pocket PC, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." title="Full top photo of VIsION glasses (ICS version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and small Intel Compute Stick pocket PC, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Outer Front</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView.png" width="372" height="266" alt="Front and center photo of VIsION glasses with labelled electronic components." title="Front and center photo of VIsION glasses with labelled electronic components." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Inner Front Side</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledInnerCenterView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledInnerCenterView.png" width="372" height="266" alt="Inner front side photo of VIsION glasses with labelled electronic components." title="Inner front side photo of VIsION glasses with labelled electronic components." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Outer Left Arm</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledOuterLeftArmView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledOuterLeftArmView.png" width="372" height="266" alt="Outer left arm photo of VIsION glasses with labelled electronic components." title="Outer left arm photo of VIsION glasses with labelled electronic components." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Inner Left Arm</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledInnerLeftArmView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledInnerLeftArmView.png" width="372" height="266" alt="Inner left arm photo of VIsION glasses with labelled electronic components." title="Inner left arm photo of VIsION glasses with labelled electronic components." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Outer Right Arm</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledOuterRightArmView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledOuterRightArmView.png" width="372" height="266" alt="Outer right arm photo of VIsION glasses with labelled electronic components." title="Outer right arm photo of VIsION glasses with labelled electronic components." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Inner Right Arm</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledInnerRightArmView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledInnerRightArmView.png" width="372" height="266" alt="Inner right arm photo with labelled electronic components." title="Inner right arm photo with labelled electronic components." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Bone-Conducting Speaker Placement</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledBoneConductingSpeakerPlacementView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledBoneConductingSpeakerPlacementView.png" width="372" height="266" alt="Left and right arm photo of VIsION glasses with labelled placement areas for pair of tiny bone-conducting speaker modules." title="Left and right arm photo of VIsION glasses with labelled placement areas for pair of tiny bone-conducting speaker modules." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+<tr>
+<th>VIEW</th>
+<th>RAW PROTOTYPE</th>
+<th>3D PRINTED PROTOTYPE</th>
+</tr>
+<tr>
+<td>Front (Worn by User)</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView_BlindUserWearingVIsIONGlasses.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView_BlindUserWearingVIsIONGlasses.png" width="372" height="266" alt="Front and center photo of blind user wearing VIsION glasses with labels of already tested 8 megapixel camera, noise-cancelling mic and sonar sensor." title="Front and center photo of blind user wearing VIsION glasses with labels of already tested 8 megapixel camera, noise-cancelling mic and sonar sensor." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Front Right (Worn by User)</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFrontRightView_BlindUserWearingVIsIONGlasses.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFrontRightView_BlindUserWearingVIsIONGlasses.png" width="372" height="266" alt="Front right photo of blind user wearing VIsION glasses with labels of already tested 8 megapixel camera, noise-cancelling mic, sonar sensor and wireless earbud." title="Front right photo of blind user wearing VIsION glasses with labels of already tested 8 megapixel camera, noise-cancelling mic, sonar sensor and wireless earbud." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Top (RPi Version)</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_RaspberryPiWVersion.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_RaspberryPiWVersion.png" width="372" height="266" alt="Full top photo of VIsION glasses (RPi version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and tiny single board Raspberry Pi Zero W computer, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." title="Full top photo of VIsION glasses (RPi version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and tiny single board Raspberry Pi Zero W computer, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Top (ICS Version)</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_IntelComputeStickVersion.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_IntelComputeStickVersion.png" width="372" height="266" alt="Full top photo of VIsION glasses (ICS version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and small Intel Compute Stick pocket PC, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." title="Full top photo of VIsION glasses (ICS version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and small Intel Compute Stick pocket PC, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Outer Front</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView.png" width="372" height="266" alt="Front and center photo of VIsION glasses with labelled electronic components." title="Front and center photo of VIsION glasses with labelled electronic components." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Inner Front Side</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledInnerCenterView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledInnerCenterView.png" width="372" height="266" alt="Inner front side photo of VIsION glasses with labelled electronic components." title="Inner front side photo of VIsION glasses with labelled electronic components." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Outer Left Arm</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledOuterLeftArmView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledOuterLeftArmView.png" width="372" height="266" alt="Outer left arm photo of VIsION glasses with labelled electronic components." title="Outer left arm photo of VIsION glasses with labelled electronic components." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Inner Left Arm</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledInnerLeftArmView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledInnerLeftArmView.png" width="372" height="266" alt="Inner left arm photo of VIsION glasses with labelled electronic components." title="Inner left arm photo of VIsION glasses with labelled electronic components." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Outer Right Arm</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledOuterRightArmView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledOuterRightArmView.png" width="372" height="266" alt="Outer right arm photo of VIsION glasses with labelled electronic components." title="Outer right arm photo of VIsION glasses with labelled electronic components." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Inner Right Arm</td><td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledInnerRightArmView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledInnerRightArmView.png" width="372" height="266" alt="Inner right arm photo with labelled electronic components." title="Inner right arm photo with labelled electronic components." /></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>Bone-Conducting Speaker Placement</td>
+<td><a href="https://github.com/MXGray/VIsION/blob/master/LabelledBoneConductingSpeakerPlacementView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledBoneConductingSpeakerPlacementView.png" width="372" height="266" alt="Left and right arm photo of VIsION glasses with labelled placement areas for pair of tiny bone-conducting speaker modules." title="Left and right arm photo of VIsION glasses with labelled placement areas for pair of tiny bone-conducting speaker modules." /></a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
 </table>
 <br>
 
