@@ -27,7 +27,7 @@
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td><B>Top (RPi Version)</B><br><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_RaspberryPiWVersion.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_RaspberryPiWVersion.png" width="25%" height="25%" alt="Full top photo of VIsION glasses (RPi version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and tiny single board Raspberry Pi Zero W computer, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." title="Full top photo of VIsION glasses (RPi version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and tiny single board Raspberry Pi Zero W computer, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." /></a></td>
+<td><B>Top (RPi Version)</B><br><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_RaspberryPiWVersion.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFullTopView_RaspberryPiWVersion.png" width="372" height="496" alt="Full top photo of VIsION glasses (RPi version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and tiny single board Raspberry Pi Zero W computer, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." title="Full top photo of VIsION glasses (RPi version) with labels of already integrated 8 megapixel camera, noise-cancelling mic, sonar sensor, wireless earbud and tiny single board Raspberry Pi Zero W computer, along with labels of soon-to-be implemented haptic discs, additional sonar sensors and bone-conducting speaker modules." /></a></td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
@@ -35,7 +35,7 @@
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td><B>Outer Front</B><br><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView.png" width="19%" height="19%" alt="Front and center photo of VIsION glasses with labelled electronic components." title="Front and center photo of VIsION glasses with labelled electronic components." /></a></td>
+<td><B>Outer Front</B><br><a href="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView.png" target="_blank"><img style="display:block;" border="0" src="https://github.com/MXGray/VIsION/blob/master/LabelledFrontView.png" width="496" height="214" alt="Front and center photo of VIsION glasses with labelled electronic components." title="Front and center photo of VIsION glasses with labelled electronic components." /></a></td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
