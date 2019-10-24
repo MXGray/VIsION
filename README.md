@@ -4,6 +4,14 @@
 
 <p style="clear"><a href="https://www.youtube.com/watch?v=sclgaGZTldo" target="_blank"><img src="https://github.com/MXGray/VIsION/blob/master/RepoPhotos/Preliminary3DPrintedVIsIONAIGlassesForTheBlind_FrontBackLeftRightViews.jpg" border="0" alt="1st 3D Printed VIsION AI Glasses Prototype:  This photo shows Marx Melencio wearing his first 3D printed prototype of the VIsION AI glasses for the blind. Click this photo to watch Marx using this prototype in action. " title="1st 3D Printed VIsION AI Glasses Prototype:  This photo shows Marx Melencio wearing his first 3D printed prototype of the VIsION AI glasses for the blind. Click this photo to watch Marx using this prototype in action. " width="480" height="640" align="left" HSPACE="30" VSPACE="30" /></a><br><br>&nbsp;&nbsp;I'm completely blind. And I created this preliminary prototype.&nbsp;&nbsp;<br>&nbsp;&nbspThis is a pair of 3D printed eyeglasses with electronic components and an open source AI / ML / DL software.&nbsp;&nbsp;<br>&nbsp;&nbsp;I call it <b>VIsION AI Glasses for the Blind</b> ...&nbsp;&nbsp;><br>&nbsp;&nbsp;Click this photo to watch as I use my first 3D printed prototype ...&nbsp;&nbsp;<br><br></p>
 
+<p style="clear"><h2>&nbsp;&nbsp;REQUIREMENTS</h2></p>
+
+<p style="clear"><ul>&nbsp;&nbsp;<li><b>SBC:</b>&nbsp;&nbsp;Tested on Intel Compute Stick (model with CORE M3 CPU), Liva Q, Raspberry Pi Zero WH, 3B+ and 4 model B</li>
+&nbsp;&nbsp;<li><b>PLATFORM:</b>&nbsp;&nbsp;Tested on Microsoft Windows 10, Raspbian Stretch and Buster, Ubuntu 1809, Android X86 & Chrome OS</li>
+&nbsp;&nbsp;<li><b>PYTHON:</b>&nbsp;&nbsp;Tested on version 3.5 and 3.6</li>
+&nbsp;&nbsp;<li><b>EXTERNAL HARDWARE:</b>&nbsp;&nbsp;Tested with USB 2.0 and 3.0 UVC 8Mp camera board with autoFocus Lens and built-in mic, Devantech SRF10 ultrasonic ranger, USB-ISS and GPIO-to-USB board, generic GPS module, bone-conduction speaker pads and stereo amplifier board, mini vibrating disk and DRV2605 microcontroller, USB soundcard, 4-port USB hub and LiFePo4 batteries</li>
+&nbsp;&nbsp;<li><b>LOCAL REPO:</b>&nbsp;&nbsp;Clone this repository ( git clone https://github.com/MXGray/VIsION.git ), then run python -m pip install -r requirements.txt, and finally python vision.py</li></ul></p>
+
 <p style="clear">&nbsp;&nbsp;<b>Sept 15 2019 Update:</b>&nbsp;&nbsp;Mainly focused on hardware assembly and 3D printing for the past couple of months. Will update this repo with latest software code, hardware source files and circuitry schematics once hardware prototype design has been finalized for both plastic injection molding and 3D printing ...&nbsp;&nbsp;</p>
 
   <p style="clear">&nbsp;&nbsp;Through audible real time feedback, this can help me know the objects in front of me, their placement and the distance of my central focus.&nbsp;&nbsp;</p>
