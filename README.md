@@ -27,12 +27,13 @@
 &nbsp;&nbsp;<li><b>PRE-TRAINED ML & DL MODELS:</b>&nbsp;&nbsp;Local and server-hosted machine learning and deep learning models For describing visual scenes and objects with its clockface locations, for converting text in physical objects like books and signboards, for detecting persons and their current actions along with estimating their age and gender, and 10x much faster processing when online;</li>
 &nbsp;&nbsp;<li><b>DISTANCE SENSING:</b>&nbsp;&nbsp;Audible & Haptic feedback when detecting distance of objects within user's central view (up to 20 feet);</li>
 &nbsp;&nbsp;<li><b>MANUAL VISUAL ASSISTANCE:</b>&nbsp;&nbsp;On-demand access to a remote crowdsourced team of work-at-home sighted persons with disabilities like mobility-impaired individuals who as pro agents will provide manual visual assistance services for a reasonable per-minute fee <i>(during more complex situations)</i>;</li>
-&nbsp;&nbsp;<li><b>WEARABLE COMPUTER</b>&nbsp;&nbsp;Use it for your productivity or recreational needs. Supports full Windows 10, Linux, Android X86 and Chrome OS;</li>
+&nbsp;&nbsp;<li><b>WEARABLE COMPUTER:</b>&nbsp;&nbsp;Use it for your productivity or recreational needs. Supports full Windows 10, Linux, Android X86 and Chrome OS;</li>
 &nbsp;&nbsp;<li><b>TURN-by-TURN GPS NAVIGATION</b> <i>(to-do)</i><b>:</b>&nbsp;&nbsp;Offline audible GPS location data;</li>
 &nbsp;&nbsp;<li><b>DO-IT-YOURSELF:</b>&nbsp;&nbsp;Anybody can build, customize and extend the features of this  tech; and</li>
-&nbsp;&nbsp;<li><b>OPEN SOURCE</b> <i>(GNU GPLv3 license)</i><b>:</b>&nbsp;&nbsp;Except packaging work that derives or is adapted from this project as proprietary or closed source, anybody can  modify, distribute, sell, freely give away or adapt from this tech for any other use case or for creating new solutions for other groups like the deaf (convert camera input of hand gestures to text, convert voice input and camera input of lip movement of others around the deaf person into text and display by micro projector, manual remote interpreting assistance, etc.) or the non-disabled (wearable computer with micro projector display or oLED lens, camera glasses, Bluetooth glasses for calls and audio playback, etc.) ...</li></ol></p>
+&nbsp;&nbsp;<li><b>OPEN SOURCE</b> <i>(GNU GPLv3 license)</i><b>:</b>&nbsp;&nbsp;With the exception of packaging any work that derives or is adapted from this project as proprietary or closed source, anybody can  modify, distribute, sell, freely give away or adapt from this tech for any other use case or for creating new solutions for other groups, i.e. For deaf users (convert camera input of hand gestures to text, convert voice input and camera input of lip movement of others around the deaf person into text and display by micro projector, manual remote interpreting assistance, etc.), or for non-disabled users (wearable computer with micro projector display or oLED lens, camera glasses, Bluetooth glasses for calls and audio playback, etc.) ...</li></ol></p>
 
 <p style="clear"><h2>&nbsp;&nbsp;PROJECT PHOTOS</h2></p>
+&nbsp;&nbsp;<br>
 
 <table border="1" cellpadding="10">
 <tr>
@@ -93,3 +94,4 @@
 &nbsp;&nbsp;<li><b>NICHE MARKET VALIDATION:</b>&nbsp;&nbsp;We entered our project to San Francisco Lighthouse for the Blind's 2019 Holman Prize competition. Our project was inspected by a panel of esteemed blind and visually impaired judges. They hand-picked our project for the semi-finals round, out of over 100 entries from across 6 continents ...</li></ol></p>
 
 <p style="clear">&nbsp;&nbsp;<b>Sept 15 2019 Update:</b>&nbsp;&nbsp;Mainly focused on hardware assembly and 3D printing for the past couple of months. Will update this repo with latest software code, hardware source files and circuitry schematics once hardware prototype design has been finalized for both plastic injection molding and 3D printing ...&nbsp;&nbsp;</p>
+&nbsp;&nbsp;<br><br>
