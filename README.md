@@ -1,4 +1,4 @@
-&nbsp;&nbsp<br>
+&nbsp;&nbsp;<br>
 <p style="clear"><a href="https://github.com/MXGray/VIsION/blob/master/RepoPhotos/AnimatedVIsIONLogo_1920x1080.gif" target="_blank"><img src="https://github.com/MXGray/VIsION/blob/master/RepoPhotos/AnimatedVIsIONLogo_1920x1080.gif" border="0" alt="Animated VIsION Logo: This is an image of a closed camera lens that opens up to show the word VIsION and closes back again, in a loop." title="Animated VIsION Logo: This is an image of a closed camera lens that opens up to show the word VIsION and closes back again, in a loop." width="480" height="270" align="left" HSPACE="30" VSPACE="30" /></a><br><br>&nbsp;&nbsp;<b>VIsION</b><br><b>Wearable AI for the Blind</b>&nbsp;&nbsp;<br><br><br><br><br><br><br><br></p>
 
 <p style="clear"><h2>&nbsp;&nbsp;PROJECT SUMMARY</h2></p>
