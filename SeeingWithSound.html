@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html airtime-extension-installed="true" airtime-extension-clientcomms-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="msapplication-TileImage" content="logo_144.png">
+<link rel="icon" type="image/png" sizes="128x128" href="https://www.seeingwithsound.com/webvoice/logo_128.png">
+<link rel="icon" type="image/png" sizes="144x144" href="https://www.seeingwithsound.com/webvoice/logo_144.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.seeingwithsound.com/webvoice/logo_192.png">
+<link rel="apple-touch-icon" sizes="128x128" href="https://www.seeingwithsound.com/webvoice/logo_128.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.seeingwithsound.com/webvoice/logo_144.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.seeingwithsound.com/webvoice/logo_180.png">
+<link rel="manifest" href="https://www.seeingwithsound.com/webvoice/manifest.json">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!--
+<LINK REL=STYLESHEET HREF="../head.css" />
+<SCRIPT LANGUAGE="JavaScript" SRC="../head.js" TYPE="text/javascript"></SCRIPT>
+-->
+<title>The vOICe web app</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script language="JavaScript">
+<!--
+var cacheVersion = null;
+//navigator.storage.estimate().then(function(info) { 
+//console.log(info.quota);
+//console.log(info.usage);
+//});
+function updateDiv() {
+   setTimeout(function() { 
+      var existDiv = document.getElementById('cacheDiv');  // Deal with race condition (div may not exist yet)
+      if (existDiv && cacheVersion) document.getElementById('cacheDiv').innerHTML = cacheVersion.substring(0,cacheVersion.indexOf('.')+3);
+   }, 2000);
+}
+if ('serviceWorker' in navigator) {
+// document.addEventListener('DOMContentLoaded', function() {  // Wait with registration until page has loaded and cacheDiv exists
+// window.addEventListener('load', function() {  // Wait with registration until page has loaded and cacheDiv exists
+   navigator.serviceWorker.register('./sw.js')
+   .then(function(reg) {
+      console.log('Service worker registered. Scope is ' + reg.scope);
+      navigator.serviceWorker.addEventListener('message', function(event) {
+         cacheVersion = `${event.data}`;
+         console.log('The vOICe web app version '+cacheVersion);
+         updateDiv();
+      });
+   }).catch(function(error) {
+      console.log('Service worker registration failed with ' + error);
+   });
+// });
+}
+document.write("<LINK HREF='"+location.href.substring(location.href.lastIndexOf("/")+1,location.href.lastIndexOf(".")+1)+"css' REL='stylesheet' TYPE='text/css'>");
+// -->
+</script><link href="./SeeingWithSound_files/webvoice.css" rel="stylesheet" type="text/css">
+</head>
+<!-- onunload for Safari https://stackoverflow.com/questions/3602887/why-doesnt-safari-honor-my-cache-control-directive -->
+<body onunload="" onload="updateDiv();" bgcolor="#000000" text="#ffffff" link="#ffff00" vlink="#ffff00" alink="#ff0000"> 
+<font face="Arial,Helvetica">
+
+<div align="right"><font size="1"><a href="https://www.seeingwithsound.com/webvoice/webvoice.htm?hl=en" title="English">en</a> | <a href="https://www.seeingwithsound.com/webvoice/webvoice.htm?hl=ru" title="русский">ru</a></font></div>
+
+<script language="JavaScript">
+<!--
+function rc(ccode) {
+   if (location.protocol != "file:" && top.document.referrer && top.document.referrer.toLowerCase().indexOf(ccode) != -1) return true; else return false;
+}
+var hl = "";
+if (navigator.userLanguage) hl = navigator.userLanguage.toLowerCase().substr(0,2); // IE 4+
+else if (navigator.language) hl = navigator.language.toLowerCase().substr(0,2); // NS
+var xcy = (hl == "ru" || hl == "uk" ? true : false);
+if (rc(".ru/") || rc(".ua/") || rc(".su/") || rc(".kz/") || rc(".by/") || rc(".az/") || rc(".bg/") || rc(".kg/")) xcy = true;
+function getQueryString(name, url) {
+   if (!url) url = window.location.href;
+   name = name.replace(/[\[\]]/g, '\\$&');
+   var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'), results = regex.exec(url);
+   if (!results) return null;
+   if (!results[2]) return '';
+   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+hl = getQueryString("hl"); 
+if (hl != null) { if (hl == "ru" || hl == "uk") xcy = true; else xcy = false; }
+//xcy = true;
+if (xcy) document.write(
+"<Center><H1>The vOICe для веб</H1></Center>"+
+"<Center><H3>сенсорного замещения<BR>"+
+"в вашем браузере</H3></Center></P>");
+else document.write(
+"<Center><H1>The vOICe web app</H1></Center>"+
+"<Center><H3>sensory substitution app<BR>"+
+"runs inside your browser</H3></Center></P>");
+// -->
+</script><center><h1>The vOICe web app</h1></center><center><h3>sensory substitution app<br>runs inside your browser</h3></center><p></p>
+<!--
+<Center><H1>The vOICe web app</H1></Center>
+<Center><H3>sensory substitution app<BR>
+runs inside your browser</H3></Center><P>
+-->
+<center>
+<noscript>
+<font color="#ffff00" size=4><b>### Javascript must be enabled! ###</b></font><P>
+</noscript>
+<font size="-1"><form>view:
+<label><input type="checkbox" id="gxScanline">scan</label>
+<label><input type="checkbox" id="gxScale">large</label>
+<label><input type="checkbox" id="gxHDR">HDR</label>
+<label><input type="checkbox" id="gxVR">VR</label>
+</form></font>
+<table width="176" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td><center>
+<div class="select" id="gxSource"><font size="-1"><label for="videoSourceID">video source: </label></font><select id="videoSourceID"><option value="77fa442b7b62d9598516b29e47b566f1930b721eb11ca9755c6afbbeecaf7326">BisonCam, NB Pro (5986:0683)</option><option value="7829c58b192f8f3c30e3853fa80053f326450f8f5d66b2c71597bda1fa28bea9">screen-capture-recorder</option></select></div>
+<div class="select" id="gxScanRate"><font size="-1"><label for="scanRateID">scan rate: </label></font><select id="scanRateID"><option value="0">slow</option><option value="1">normal</option><option value="2">fast</option></select></div>
+<div id="gxArea" style="z-index:0;">
+<video id="gxVideo" playsinline="playsinline" autoplay="autoplay"></video><!-- Chrome on Android needs autoplay -->
+<canvas id="gxCanvas" style="border:none;" width="176" height="144"></canvas>
+</div>
+</center></td></tr></tbody></table>
+<table cellpadding="0" cellspacing="5" border="0"><tbody><tr>
+<td><button id="gxMute" accesskey="m">mute</button></td>
+<td><button id="gxEdges" accesskey="e">edges</button></td>
+</tr><tr>
+<td><button id="gxNegative" accesskey="n">negative</button></td>
+<td><button id="gxZoom" accesskey="z">zoom</button></td>
+</tr><tr>
+<td><button id="gxMono" accesskey="s">mono</button></td>
+<td><button id="gxReset" accesskey="r" style="background: rgb(0, 127, 0);">reset</button></td>
+</tr><tr>
+<td colspan="2">
+<div style="height: 4px;">&nbsp;</div><button id="gxRecord" accesskey="q" aria-label="Start recording video" style="background: rgb(127, 0, 0);">record</button></td>
+</tr></tbody></table><p>
+</p><p></p><div id="gxStatus"></div>
+
+<script language="JavaScript">
+<!--
+// https://stackoverflow.com/questions/8788802/prevent-safari-loading-from-cache-when-back-button-is-clicked
+// window.onpageshow = function (event) { if (event.persisted) { window.location.reload(); }};
+document.write("<script src='"+location.href.substring(location.href.lastIndexOf("/")+1,location.href.lastIndexOf("."))+"_i.js'><\/script>");
+document.write("<script src='"+location.href.substring(location.href.lastIndexOf("/")+1,location.href.lastIndexOf(".")+1)+"js'><\/script>");
+if (xcy) document.write("</P>The vOICe веб приложение для слепых");
+else document.write("</P>The vOICe web app for the totally blind<BR>requires browser with WebRTC support");
+// -->
+</script><script src="./SeeingWithSound_files/webvoice_i.js.download"></script><script src="./SeeingWithSound_files/webvoice.js.download"></script><div id="gxScan1" style="mix-blend-mode: exclusion; position: absolute; visibility: visible; top: 243px; left: 806.546px;"><div id="gxScan1Rect" style="background:#FFFFFF; width:1px; height:144px;"></div></div><div id="gxScan2" style="mix-blend-mode: exclusion; position: absolute; visibility: hidden;"><div id="gxScan2Img" style="background:#FFFFFF; width:1px; height:144px;"></div></div><p></p>The vOICe web app for the totally blind<br>requires browser with WebRTC support
+
+<p></p><div id="gxMessage"></div>
+
+<!--</P><A HREF="webvoice2.htm">usage notes</A> | <A HREF="../index.html" TARGET="_top">The vOICe homepage</A>-->
+
+<script language="JavaScript">
+<!--
+if (xcy) document.write("</P><A HREF='webvoice2.htm'>заметки</A> (en)&#160;&#160;|&#160; <A HREF='../index.html' TARGET='_top'>The vOICe главная</A>");
+else document.write("</P><A HREF='webvoice2.htm'>usage notes</A>&#160;&#160;|&#160; <A HREF='../index.html' TARGET='_top'>The vOICe homepage</A>");
+// Deal with race condition for div creation vs cacheVersion assignment (differs for Firefox and Chrome)
+document.write("</P><font size=1 color=#7f7f7f>version <div id='cacheDiv' style='display: inline-block'> "+(cacheVersion?cacheVersion.substring(0,cacheVersion.indexOf('.')+3):"unknown")+"</div></font></P>");
+// -->
+</script><p></p><a href="https://www.seeingwithsound.com/webvoice/webvoice2.htm">usage notes</a>&nbsp;&nbsp;|&nbsp; <a href="https://www.seeingwithsound.com/index.html" target="_top">The vOICe homepage</a><p></p><font size="1" color="#7f7f7f">version <div id="cacheDiv" style="display: inline-block">1.27</div></font><p></p>
+<!--</P><font size=1 color=#7f7f7f>version <div id='cacheDiv' style='display: inline-block'>unknown</div></font></P>-->
+
+</center>
+</font>
+<!--<SCRIPT LANGUAGE="JavaScript" SRC="../ga.js" TYPE="text/javascript"></SCRIPT>-->
+
+
+</body></html>
