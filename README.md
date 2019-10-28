@@ -26,12 +26,12 @@
 &nbsp;&nbsp;<li>&nbsp;Open Firefox. Go to about:config, search and set media > navigator > disabled to True, and toolkit > startup > max_resumed_crashes to a fairly large integer. Afterwards, install the Auto Fullscreen extension;</li>
 &nbsp;&nbsp;<li>&nbsp;Make sure the tools above are in the system path;</li>
 &nbsp;&nbsp;<li>&nbsp;Clone this repository ( git clone https://github.com/MXGray/VIsION.git );</li>
-&nbsp;&nbsp;<li>&nbsp;Run python -m pip install -r requirements.txt;</li>
 &nbsp;&nbsp;<li>&nbsp;Go to cloned repo ( cd /path-where-you-cloned-this-repo/VIsION );</li>
+&nbsp;&nbsp;<li>&nbsp;Run python -m pip install -r requirements.txt;</li>
 &nbsp;&nbsp;<li>&nbsp;Open Firefox. Inside your cloned repo's root directory, save the SeeingWithSound© vOIC™ offline Web app freeware as complete HTM. Go <a href="https://www.seeingwithsound.com/webvoice/webvoice.htm" target="_blank">here</a> to do this. Rename HTML file as SeeingWithSound.html;</li>
 &nbsp;&nbsp;<li>&nbsp;Download a pre-trained Caffe model <a href="http://sceneparsing.csail.mit.edu/model/caffe/" target="_blank">here</a>, store it in multiobj/ade20k/ and rename the caffemodel and prototxt files ( should be dn.caffemodel and dn.prototxt );</li>
-&nbsp;&nbsp;<li>&nbsp;Download a pre-trained Mask-rCNN model <a href="https://www.pyimagesearch.com/2018/11/19/mask-r-cnn-with-opencv/" target="_blank">here</a> and store it inside multiobj, along with pre-trained Caffe models for face detection, age and gender estimation (folders inside multiobj are labeled); or</li>
-&nbsp;&nbsp;<li>&nbsp;Just use re-trained models (via transfer learning) that come with this repo, except for the Ade20K and Mask-rCNN models, which you must download <a href="https://drive.google.com/file/d/1ICsBxdpFfAd-cQfEmlLTG5lUqwaWzSa8/view?usp=sharing" target="_blank">here</a> and <a href="https://drive.google.com/file/d/1qFNq5xhTzkJ3Tnaw-JO8kL_ZIoYL92-I/view?usp=sharing" target="_blank">here</a>, as they're too big for Github ( store dn.caffemodel inside multiobj/ade20k and navnet.pb inside multiobj ); and</li>
+&nbsp;&nbsp;<li>&nbsp;Download a pre-trained Mask-rCNN model <a href="https://www.pyimagesearch.com/2018/11/19/mask-r-cnn-with-opencv/" target="_blank">here</a> and store it inside multiobj, along with pre-trained Caffe models for face detection, age and gender estimation (folders inside multiobj are labeled);</li>
+&nbsp;&nbsp;<li>&nbsp;<b>OR,</b> just use re-trained models (via transfer learning) that come with this repo, except for the Ade20K and Mask-rCNN models, which you must download <a href="https://drive.google.com/file/d/1ICsBxdpFfAd-cQfEmlLTG5lUqwaWzSa8/view?usp=sharing" target="_blank">here</a> and <a href="https://drive.google.com/file/d/1qFNq5xhTzkJ3Tnaw-JO8kL_ZIoYL92-I/view?usp=sharing" target="_blank">here</a>, as they're too big for Github ( store dn.caffemodel inside multiobj/ade20k and navnet.pb inside multiobj ); and</li>
 &nbsp;&nbsp;<li>&nbsp;Finally, run python vision.py&nbsp;...&nbsp;</li></ol></p>
 
 <p style="clear">&nbsp;&nbsp;<b><i>NOTE:</b></i>&nbsp;&nbsp;3D printing source files are included in this repo&nbsp;...&nbsp;&nbsp;</p>
