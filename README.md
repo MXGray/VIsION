@@ -28,7 +28,7 @@
 &nbsp;&nbsp;<li>&nbsp;Clone this repository ( git clone https://github.com/MXGray/VIsION.git );</li>
 &nbsp;&nbsp;<li>&nbsp;Go to cloned repo ( cd /path-where-you-cloned-this-repo/VIsION );</li>
 &nbsp;&nbsp;<li>&nbsp;Run python -m pip install -r requirements.txt;</li>
-&nbsp;&nbsp;<li>&nbsp;Open Firefox. Inside your cloned repo's root directory, save the SeeingWithSound© vOIC™ offline Web app freeware as complete HTM. Go <a href="https://www.seeingwithsound.com/webvoice/webvoice.htm" target="_blank">here</a> to do this. Rename HTML file as SeeingWithSound.html;</li>
+&nbsp;&nbsp;<li>&nbsp;Open Firefox. Inside your cloned repo's root directory, save the freeware SeeingWithSound© vOIC™ offline Web app as complete HTM. Go <a href="https://www.seeingwithsound.com/webvoice/webvoice.htm" target="_blank">here</a> to do this. Rename HTML file as SeeingWithSound.html;</li>
 &nbsp;&nbsp;<li>&nbsp;Download a pre-trained Caffe model <a href="http://sceneparsing.csail.mit.edu/model/caffe/" target="_blank">here</a>, store it in multiobj/ade20k/ and rename the caffemodel and prototxt files ( should be dn.caffemodel and dn.prototxt );</li>
 &nbsp;&nbsp;<li>&nbsp;Download a pre-trained Mask-rCNN model <a href="https://www.pyimagesearch.com/2018/11/19/mask-r-cnn-with-opencv/" target="_blank">here</a> and store it inside multiobj, along with pre-trained Caffe models for face detection, age and gender estimation (folders inside multiobj are labeled);</li>
 &nbsp;&nbsp;<li>&nbsp;OR, just use re-trained models (via transfer learning) bundled with this repo, except for Ade20K and Mask-rCNN ( download <a href="https://drive.google.com/file/d/1ICsBxdpFfAd-cQfEmlLTG5lUqwaWzSa8/view?usp=sharing" target="_blank">here</a> and <a href="https://drive.google.com/file/d/1qFNq5xhTzkJ3Tnaw-JO8kL_ZIoYL92-I/view?usp=sharing" target="_blank">here</a>, as they're too big for Github, put dn.caffemodel inside multiobj/ade20k and navnet.pb in multiobj ); and</li>
@@ -38,7 +38,7 @@
 
 <p style="clear"><h2>&nbsp;&nbsp;HOW IT WORKS</h2></p>
 
-<p style="clear">&nbsp;&nbsp;<ol><li><b>3D SOUNDSCAPE:</b>&nbsp;&nbsp;SeeingWithSound© vOIC™ using bone conduction speaker pads) for "visual" interpretation of scenes and objects through trained neural auditory synthesis for those who became blind from the age of 7 and above;</li>
+<p style="clear">&nbsp;&nbsp;<ol><li><b>3D SOUNDSCAPE:</b>&nbsp;&nbsp;Freeware SeeingWithSound© vOIC™ using bone conduction speaker pads) for "visual" interpretation of scenes and objects through trained neural auditory synthesis for those who became blind from the age of 7 and above;</li>
 &nbsp;&nbsp;<li><b>PRE-TRAINED ML & DL MODELS:</b>&nbsp;&nbsp;Local and server-hosted machine learning and deep learning models For describing visual scenes and objects with its clockface locations, for converting text in physical objects like books and signboards, for detecting persons and their current actions along with estimating their age and gender, and 10x much faster processing when online;</li>
 &nbsp;&nbsp;<li><b>DISTANCE SENSING:</b>&nbsp;&nbsp;Audible & Haptic feedback when detecting distance of objects within user's central view (up to 20 feet);</li>
 &nbsp;&nbsp;<li><b>MANUAL VISUAL ASSISTANCE:</b>&nbsp;&nbsp;On-demand access to a remote crowdsourced team of work-at-home sighted persons with disabilities like mobility-impaired individuals who as pro agents will provide manual visual assistance services for a reasonable per-minute fee <i>(helpful during complex situations)</i>;</li>
