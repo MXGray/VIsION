@@ -1,28 +1,32 @@
 #!usr/bin/env python  
 #coding=utf-8  
 
+# Here's Our License
 #    Copyright (C) 2019  Grayscale & VIsION AI Labs Philippines
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#    The full GNU GPL v3 license of the software  and the hardware 3D printing source files in this repository ( https://github.com/MXGray/VIsION ) is found in https://github.com/MXGray/VIsION/commit/923b68e1dd835bd6ee00ebc5908de04146c1ea47
-#   To contact the author of this repository, send an email to marxvergelmelencio@gmail.com or to grayscale.consultants@gmail.com or visit their Facebook page at https://facebook.com/grayscaleconsultants ...
+##    This program is free software: you can redistribute it and/or modify
+##    it under the terms of the GNU General Public License as published by
+##    the Free Software Foundation, either version 3 of the License, or
+##    (at your option) any later version.
 
-# Import Required Packages
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+
+##    You should have received a copy of the GNU General Public License
+##    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+##    The full GNU GPL v3 license of the software  and the hardware 3D printing source files in this repository ( https://github.com/MXGray/VIsION ) is found in https://github.com/MXGray/VIsION/commit/923b68e1dd835bd6ee00ebc5908de04146c1ea47
+
+##   To contact the author of this repository, send an email to marxvergelmelencio@gmail.com or to grayscale.consultants@gmail.com or visit their Facebook page at https://facebook.com/grayscaleconsultants ...
+
+# So Let's Import Required Packages
 from __future__ import print_function
 
-## Standard Packages
+## Here are Some Standard Packages
 import os
 os.system('color 9F')
-import msvcrt
 import subprocess
 import sys
 import time
@@ -37,23 +41,24 @@ import socket
 import platform
 from io import BytesIO
 
-## Package to Send Emails from Gmail
+## And We'll Use This Package to Send Emails from Gmail
 import yagmail
 
+## Hold on! Let's Check Your System
 if platform.system() == 'Windows':
 	import win32gui
 	import win32process
 
-## Input Device Automation and Monitoring Packages
+## So Now Let's Import Input Device Automation and Monitoring Packages
 import keyboard
 import pyautogui
 pyautogui.FAILSAFE = False
 
-## Audio Generation and Processing Packages
+## And a Few Audio Generation and Processing Packages That We REALLY Need
 import pyaudio  
 import wave  
 
-## Image and Video Processing Libraries
+## And here are Some Image and Video Processing Libraries
 import cv2
 import numpy as np
 OPENCV_VIDEOIO_PRIORITY_MSMF = 0
@@ -63,18 +68,28 @@ from imutils.video import FPS
 from PIL import Image
 
 
-# Collection of Non-Daemon Threads
+# Hold on! Let's Check Your System
+if platform.system() == 'Windows':
+	os.system('cls')
+elif platform.system() != 'Windows':
+	os.system('clear')
 
+
+# So Now Let's Instantiate Our Collection of Non-Daemon Threads
+
+## Yeah, We Really Need Audible Input, But Just Don't Overdo It!
 ## Beep Sound
 if platform.system() == 'Windows':
 	import winsound
 	def beep(f,d):
 		winsound.Beep(f,d)
+
 elif platform.system() != 'Windows':
-	# Install Beep by apt-get beep
+	### Install Beep by apt-get beep
 	def beep(f,d):
 		os.system('beep -f %s -l %s' % (f,d))
 
+## And Yes, We Want Some Sort of TTS.
 ## Text-to-Speech
 if platform.system() == 'Windows':
 	### Windows-Specific TTS (Text to Speech) Packages
@@ -86,39 +101,44 @@ if platform.system() == 'Windows':
 	speaker.Rate = 0
 	def say(s):
 		speaker.Speak(s)
+
 elif platform.system() != 'Windows':
 	### Run CLI Commands Below as Root to Install Pico TTS
-	# wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb
-	# wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb
-	# apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb
+	###wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb
+	###wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb
+	###apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb
 	def say(s):
 		os.system('pico2wave -w tmp.wav \"%s\"' % (s))
 		os.system('rm -rf tmp.wav')
 
-## Set Terminal Title
+## And Now Let's Tell the Terminal to Change the Current Title
 if platform.system() == 'Windows':
 	import ctypes
 	def title(s):
 		ctypes.windll.kernel32.SetConsoleTitleW(s)
+
 elif platform.system() != 'Windows':
 	cmdterminal = ["xterm"]
 	def title(s):
-		# Tell Terminal to Change Current Title
 		if os.getenv("TERM") in cmdterminal:
 			print("\x1B]0;%s\x07" % s)
 
-## Check Ultrasonic Ranger Hardware
+## Hold on! Let's Check If You Want to Use a Devantech SRF10 Ultrasonic Ranger.
 from usb_iss import UsbIss, defs
 iss = UsbIss()
 def checkultrasonic():
 	beep(538,333)
 	print('\n   Checking Ultrasonic Ranger Hardware ...   \n')
 	say('Checking hardware. ')
+
 	try:
 		if platform.system() == 'Windows':
 			iss.open("COM7") # Check Device Manager for Correct COM Port Number
+
 		elif platform.system() != 'Windows':
 			iss.open('/dev/ttyACM0') # Check dmesg | grep -i /dev/tty* as Root
+
+		### Continue
 		iss.setup_i2c()
 		beep(338,333)
 		print('\n   Ultrasonic Ranger Found ...   \n   Activating Distance Sensing ...   \n')
@@ -127,6 +147,7 @@ def checkultrasonic():
 		say('Activating distance sensing. ')
 		global ultrasonic
 		ultrasonic = 'true'
+
 	except Exception as e:
 		ultrasonic = 'false'
 		beep(138,333)
@@ -135,26 +156,30 @@ def checkultrasonic():
 		beep(138,333)
 		say('Disabling distance sensing. ')
 
-# Check Internet Connection
+## And Now Let's Check If You Want to Use an Internet Connection.
 def checkinternet():
 	beep(538,333)
 	print('\n   Checking Internet Connectivity ...   \n')
 	say('Checking Internet Connectivity.  ')
 	remote_server = "www.youtube.com"
-	try: 
-		# Try to Resolve Host Name to Check If DNS is Listening
+
+	try:
+		### Try to Resolve Host Name to Check If DNS is Listening
 		host = socket.gethostbyname(remote_server)
-		# Try to Connect to Host to Check If Host is Reachable
+		### Try to Connect to Host to Check If Host is Reachable
 		s = socket.create_connection((host, 80), 2)
 		s.close()
 		global istatus
 		istatus = 'true'
+
 	except Exception as e:
 		istatus = 'false'
+
 	if istatus == 'true':
 		beep(338,333)
 		print('\n   Online & Offline Modes Enabled - Active Internet Connection Found ...   \n')
 		say('Online and offline modes enabled. ')
+
 	elif istatus == 'false':
 		beep(238,333)
 		print('\n  Offline Mode Enabled - Inactive Internet Connection ...   \n')
@@ -162,7 +187,7 @@ def checkinternet():
 		beep(238,333)
 		say('Inactive Internet connection. ')
 
-# Clean Up Environment
+## And Let's Clean Up the Environment
 global path
 path = os.path.dirname(os.path.realpath(__file__))
 def cleanup():
@@ -171,11 +196,15 @@ def cleanup():
 	say('Preparing virtual environment. ')
 	global path
 	path = os.path.dirname(os.path.realpath(__file__))
+
 	try:
 		if platform.system() == 'Windows':
 			path = path.replace('\\','/')
+
 		elif platform.system() != 'Windows':
 			pass
+
+		### Continue
 		path1 = path+'/newimg/'
 		path2 = path+'/killthread/'
 		path3 = path+'/killthread2/'
@@ -189,25 +218,24 @@ def cleanup():
 		os.system('rm -rf '+path5+'*')
 		os.system('rm -rf '+path6+'*')
 		return
+
 	except Exception as e:
 		say('Problem loading! Navigation mode deactivating now! Try to run again!  ')
 		print('\n   Problem Loading ...   \n   Navigation Mode Deactivating Now ...   \n   Try Running Again ...   \n')
-	if platform.system() == 'Windows':
-		os.system('cls')
-	elif platform.system() != 'Windows':
-		os.system('clear')
 
-## Check Camera
+## And Let's Also Check Your USB Camera
 def checkcam():
 	beep(538,333)
 	print('\n   Checking Camera Hardware ...   \n')
 	say('Checking camera. ')
+
 	try:
 		vs = WebcamVideoStream(src=0).start()
 		window_name = "VIsION_CAM"
 		interframe_wait_ms = 1200
 		cv2.namedWindow(window_name, cv2.WND_PROP_FULLSCREEN)
 		cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
 		while 1:
 			frame = vs.read()
 			frame = imutils.resize(frame, width=1600,height=1200)
@@ -219,22 +247,150 @@ def checkcam():
 			cv2.destroyAllWindows()
 			vs.stop()
 			break
+
 	except Exception as e:
 		# Cam Cleanup
 		cv2.destroyAllWindows()
 		vs.stop()
 		beep(338,333)
-		print('\n   No Active Camera Found!   \n   Please Restart & Check ...   \n   Now Deactivating VIsION ...   \n')
+		print('\n   No Active Camera Found!   \n   Please fix ...   \n   Now Deactivating VIsION ...   \n')
 		say('No active camera found. ')
 		beep(238,222)
-		say('Please restart and check. ')
+		say('Please fix. ')
 		beep(338,222)
 		beep(238,222)
 		beep(1238,111)
 		say('Now deactivating vision. ')
 		sys.exit()
 
-## Deactivate Sound
+## Let's Silently Check If You're Using a Devantech SRF10 Ultrasonic Ranger
+from usb_iss import UsbIss, defs
+iss = UsbIss()
+def nscheckultrasonic():
+	beep(538,333)
+	print('\n   Checking Ultrasonic Ranger Hardware ...   \n')
+
+	try:
+		if platform.system() == 'Windows':
+			iss.open("COM7") # Check Device Manager for Correct COM Port Number
+
+		elif platform.system() != 'Windows':
+			iss.open('/dev/ttyACM0') # Check dmesg | grep -i /dev/tty* as Root
+
+		### Continue
+		iss.setup_i2c()
+		beep(338,333)
+		print('\n   Ultrasonic Ranger Found ...   \n   Activating Distance Sensing ...   \n')
+		beep(338,333)
+		global ultrasonic
+		ultrasonic = 'true'
+
+	except Exception as e:
+		ultrasonic = 'false'
+		beep(138,333)
+		print('\n   No Ultrasonic Ranger Found ...   \n   Disabling Distance Sensing ...   \n')
+
+## Now Let's Silently Check If You're Using an Internet Connection.
+def nscheckinternet():
+	beep(538,333)
+	print('\n   Checking Internet Connectivity ...   \n')
+	remote_server = "www.youtube.com"
+
+	try:
+		### Try to Resolve Host Name to Check If DNS is Listening
+		host = socket.gethostbyname(remote_server)
+		### Try to Connect to Host to Check If Host is Reachable
+		s = socket.create_connection((host, 80), 2)
+		s.close()
+		global istatus
+		istatus = 'true'
+
+	except Exception as e:
+		istatus = 'false'
+
+	if istatus == 'true':
+		beep(338,333)
+		print('\n   Online & Offline Modes Enabled - Active Internet Connection Found ...   \n')
+
+	elif istatus == 'false':
+		beep(238,333)
+		print('\n  Offline Mode Enabled - Inactive Internet Connection ...   \n')
+
+## Let's Silently Clean Up the Environment
+global path
+path = os.path.dirname(os.path.realpath(__file__))
+def nscleanup():
+	beep(538,333)
+	print('\n   Preparing Virtual Environment ...   \n')
+	global path
+	path = os.path.dirname(os.path.realpath(__file__))
+
+	try:
+		if platform.system() == 'Windows':
+			path = path.replace('\\','/')
+
+		elif platform.system() != 'Windows':
+			pass
+
+		### Continue
+		path1 = path+'/newimg/'
+		path2 = path+'/killthread/'
+		path3 = path+'/killthread2/'
+		path4 = path+'/ocrfinroi/'
+		path5 = path+'/ocrtxts/'
+		path6 = path+'/ocrimgs/'
+		os.system('rm -rf '+path1+'*')
+		os.system('rm -rf '+path2+'*')
+		os.system('rm -rf '+path3+'*')
+		os.system('rm -rf '+path4+'*')
+		os.system('rm -rf '+path5+'*')
+		os.system('rm -rf '+path6+'*')
+		return
+
+	except Exception as e:
+		say('Problem loading! Navigation mode deactivating now! Try to run again!  ')
+		print('\n   Problem Loading ...   \n   Navigation Mode Deactivating Now ...   \n   Try Running Again ...   \n')
+
+## Let's Silently Check Your USB Camera
+def nscheckcam():
+	beep(538,333)
+	print('\n   Checking Camera Hardware ...   \n')
+
+	try:
+		vs = WebcamVideoStream(src=0).start()
+		window_name = "VIsION_CAM"
+		interframe_wait_ms = 800
+		cv2.namedWindow(window_name, cv2.WND_PROP_FULLSCREEN)
+		cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+		while 1:
+			frame = vs.read()
+			frame = imutils.resize(frame, width=1600,height=1200)
+			beep(333,666)
+			cv2.imshow(window_name, frame)
+			cv2.waitKey(interframe_wait_ms) 
+			# Cam Cleanup
+			cv2.destroyAllWindows()
+			vs.stop()
+			break
+
+	except Exception as e:
+		# Cam Cleanup
+		cv2.destroyAllWindows()
+		vs.stop()
+		beep(338,333)
+		print('\n   No Active Camera Found!   \n   Please fix ...   \n   Now Deactivating VIsION ...   \n')
+		say('No active camera found. ')
+		beep(238,222)
+		say('Please fix. ')
+		beep(338,222)
+		beep(238,222)
+		beep(1238,111)
+		say('Now deactivating vision. ')
+		sys.exit()
+
+
+## So Let's Instantiate a Deactivate Sound Template
 def deactivatesound(titletext):
 	beep(338,333)
 	beep(238,222)
@@ -242,36 +398,44 @@ def deactivatesound(titletext):
 	beep(138,111)
 	say(titletext+' deactivated!  ')
 	CREATE_NO_WINDOW = 0x08000000
+
 	if platform.system() == 'Windows':
 		subprocess.call('taskkill /f /im firefox.exe /t', creationflags=CREATE_NO_WINDOW)
 		os.system('cls')
+
 	elif platform.system() != 'Windows':
 		subprocess.call('kill -9 $(ps -x | grep firefox)', creationflags=CREATE_NO_WINDOW)
 		os.system('clear')
 
-## Intro Message for Each Mode
+## Along with an Intro Message Template for Each Mode
 def intromsg(titletext):
 	print('\n '+titletext+' Activated!  \n\n')
 	if titletext == 'Navigation Mode' or titletext == 'Video Recording Mode' or titletext == 'Sound Recording Mode':
 		print(' Quick Press to Go Back ... \n')
 	else:
 		pass
+
 	beep(538,333)
 	say(titletext+' activated. ')
+
 	if titletext == 'Navigation Mode' or titletext == 'Video Recording Mode' or titletext == 'Sound Recording Mode':
 		say('Quick press anytime to go back. ')
+
 	else:
 		pass
+
 	if platform.system() == 'Windows':
 		time.sleep(0.1)
 		os.system('cls')
+
 	elif platform.system() != 'Windows':
 		time.sleep(0.1)
 		os.system('clear')
 	return
 
-## Find Window Title and Activate
+## As Well As a Template to Find the Window Title That We Want and Activate It
 def findwin(titletext):
+
 	if platform.system() == 'Windows':
 		def window_enum_handler(hwnd, resultList):
 			if win32gui.IsWindowVisible(hwnd) and win32gui.GetWindowText(hwnd) != '':
@@ -289,23 +453,61 @@ def findwin(titletext):
 			winname = winname.strip()
 			if winname == titletext:
 				win32gui.SetForegroundWindow(i[0])
+
 	elif platform.system() != 'Windows':
-		# install wmctrl using apt-get install
+		### install wmctrl using apt-get install
 		os.system('wmctrl -a '+titletext)
 
 
-# Initialization
+# Finally, Let's Start!
 title("   VIsION Open Source DIY AI Glasses   ")
-
 beep(538,333)
 print('\n\n   VIsION   \n\n  Open Source, Do-It-Yourself  \n AI-Powered Eyeglasses for the Blind \n')
 say('Vision. Open source, do it yourself, ')
 say(', AI powered, eyeglasses for the blind. ')
 
-checkultrasonic()
-checkinternet()
-cleanup()
-checkcam()
+def checknumruns():
+	if os.path.exists(path+'/checknumruns/1.txt'):
+		os.rename(path+'/checknumruns/1.txt', path+'/checknumruns/2.txt')
+	elif os.path.exists(path+'/checknumruns/2.txt'):
+		os.rename(path+'/checknumruns/2.txt', path+'/checknumruns/3.txt')
+	elif os.path.exists(path+'/checknumruns/3.txt'):
+		os.rename(path+'/checknumruns/3.txt', path+'/checknumruns/4.txt')
+	elif os.path.exists(path+'/checknumruns/4.txt'):
+		os.rename(path+'/checknumruns/4.txt', path+'/checknumruns/5.txt')
+	elif os.path.exists(path+'/checknumruns/5.txt'):
+		os.rename(path+'/checknumruns/5.txt', path+'/checknumruns/6.txt')
+	elif os.path.exists(path+'/checknumruns/6.txt'):
+		os.rename(path+'/checknumruns/6.txt', path+'/checknumruns/7.txt')
+	elif os.path.exists(path+'/checknumruns/7.txt'):
+		os.rename(path+'/checknumruns/7.txt', path+'/checknumruns/8.txt')
+	elif os.path.exists(path+'/checknumruns/8.txt'):
+		os.rename(path+'/checknumruns/8.txt', path+'/checknumruns/9.txt')
+	elif os.path.exists(path+'/checknumruns/9.txt'):
+		os.rename(path+'/checknumruns/9.txt', path+'/checknumruns/10.txt')
+	elif os.path.exists(path+'/checknumruns/10.txt'):
+		os.rename(path+'/checknumruns/10.txt', path+'/checknumruns/11.txt')
+	elif os.path.exists(path+'/checknumruns/11.txt'):
+		os.rename(path+'/checknumruns/11.txt', path+'/checknumruns/12.txt')
+	elif os.path.exists(path+'/checknumruns/12.txt'):
+		os.rename(path+'/checknumruns/12.txt', path+'/checknumruns/1.txt')
+
+try:
+	checknumruns()
+except Exception as e:
+	pass
+
+if os.path.exists(path+'/checknumruns/2.txt') or os.path.exists(path+'/checknumruns/3.txt') or os.path.exists(path+'/checknumruns/4.txt') or os.path.exists(path+'/checknumruns/5.txt') or os.path.exists(path+'/checknumruns/6.txt') or os.path.exists(path+'/checknumruns/7.txt') or os.path.exists(path+'/checknumruns/8.txt') or os.path.exists(path+'/checknumruns/9.txt') or os.path.exists(path+'/checknumruns/10.txt') or os.path.exists(path+'/checknumruns/11.txt'):
+	checkultrasonic()
+	checkinternet()
+	cleanup()
+	checkcam()
+elif os.path.exists(path+'/checknumruns/1.txt'):
+	nscheckultrasonic()
+	nlcheckinternet()
+	nscleanup()
+	nscheckcam()
+
 gc.collect()
 
 # Load VIsION Engine
@@ -340,10 +542,12 @@ face_net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 ## Age and Gender Estimation Tensorflow Model
 age_list = ['zero to two-year old', 'four to six-year old', 'eight to twelve-year old', 'fifteen to twenty-year old', 'twenty five to thirty two-year old', 'thirty eight to forty three-year old', 'forty eight to fifty three-year old', 'sixty or so year old']
 gender_list = ['male', 'female']
+
 def initialize_caffe_models():
 	age_net = cv2.dnn.readNetFromCaffe(path+'/multiobj/age/deploy_age.prototxt', path+'/multiobj/age/age_net.caffemodel')
 	gender_net = cv2.dnn.readNetFromCaffe(path+'/multiobj/gender/deploy_gender.prototxt', path+'/multiobj/gender/gender_net.caffemodel')
 	return(age_net, gender_net)
+
 age_net, gender_net = initialize_caffe_models()
 age_net.setPreferableBackend(cv2.dnn.DNN_BACKEND_DEFAULT)
 #age_net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
@@ -352,15 +556,16 @@ gender_net.setPreferableBackend(cv2.dnn.DNN_BACKEND_DEFAULT)
 #gender_net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
 gender_net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
-
-#  IoT API Services
+#  Do You Want to Use IoT API Services?
 ## Microsoft CIS Vision API Credentials
 global onlinescenedescriptor_subscription_key
 onlinescenedescriptor_subscription_key = "Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here"
+
 if onlinescenedescriptor_subscription_key != 'Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here':
 	assert onlinescenedescriptor_subscription_key
 	onlinescenedescriptor_base_url = "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/"
 	onlinescenedescriptor_analyze_url = onlinescenedescriptor_base_url + "analyze"
+
 elif onlinescenedescriptor_subscription_key == 'Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here':
 	print('\n   Offline Mode Only ...   \n   No Microsoft CIS Computer Vision API Credentials Found ...   \n   To enable faster recognition mode, open vision.py File. Press ctrl+f and type onlinescenedescriptor_subscription_key to supply your API key ...   \n')
 	beep(238,333)
@@ -369,10 +574,12 @@ elif onlinescenedescriptor_subscription_key == 'Enter-Your-Microsoft-CIS-Compute
 ## Microsoft CIS OCR API Credentials
 global onlineocr_subscription_key
 onlineocr_subscription_key = 'Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here'
+
 if onlineocr_subscription_key != 'Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here':
 	assert onlineocr_subscription_key
 	onlineocr_base_url = 'https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/'
 	text_recognition_url = onlineocr_base_url + 'read/core/asyncBatchAnalyze'
+
 elif onlineocr_subscription_key == 'Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here':
 	print('\n   Offline Mode Only ...   \n   No Microsoft CIS Computer Vision API Credentials Found ...   \n   To enable faster OCR mode, open vision.py File. Press ctrl+f and type onlineocr_subscription_key to supply your API key ...   \n')
 	beep(238,333)
@@ -384,13 +591,16 @@ global onetimerecognition_api_key
 onetimerecognition_api_key = 'Enter-Your-Cloudsight-API-Key-Here'
 global onetimerecognition_API 
 onetimerecognition_API = 'Enter-Your-Cloudsight-API-Here'
+
 if onetimerecognition_api_key != 'Enter-Your-Cloudsight-API-Key-Here':
 	if onetimerecognition_API != 'Enter-Your-Cloudsight-API-Here':
 		onetimerecognition_api_base_url = 'https://api.cloudsightapi.com'
+
 	elif onetimerecognition_API == 'Enter-Your-Cloudsight-API-Here':
 		print('\n   Offline Mode Only ...   \n   No Cloudsight API Credentials Found ...   \n   To enable one-time recognition mode, open vision.py File. Press ctrl+f and type onetimerecognition_API to supply your API keys ...   \n')
 		beep(238,333)
 		say('Offline mode only. No Cloudsight API credentials found. To enable one time recognition mode, open vision.py file. Press control then f and type onetimerecognition_API to supply your API keys. ')
+
 elif onetimerecognition_api_key == 'Enter-Your-Cloudsight-API-Key-Here':
 	print('\n   Offline Mode Only ...   \n   No Cloudsight API Credentials Found ...   \n   To enable one-time recognition mode, open vision.py File. Go to lines 312 and 313. Supply your API keys ...   \n')
 	beep(238,333)
@@ -6811,28 +7021,36 @@ def offlineocr():
 				elif platform.system() != 'Windows':
 					pass
 
-				xx = open(path+'/ocrtxts/OCRResults.txt', "r")
-				yy = xx.readlines()
-				numln = len(yy)
-				lsln = []
-				for ln in yy:
-					if ln == '' or ln == '\n':
-						lsln.append('1')
-					else:
-						time.sleep(0.01)
-				xx.close()
+				try:
+					xx = open(path+'/ocrtxts/OCRResults.txt', "r")
+					yy = xx.readlines()
+					numln = len(yy)
+					lsln = []
+					for ln in yy:
+						if ln == '' or ln == '\n':
+							lsln.append('1')
+						else:
+							time.sleep(0.01)
+					xx.close()
 
-				numempty = len(lsln)
-				if numln == numempty:
-					if platform.system() == 'Windows':
-						path = path.replace('\\','/')
-					elif platform.system() != 'Windows':
+					numempty = len(lsln)
+					if numln == numempty:
+						if platform.system() == 'Windows':
+							path = path.replace('\\','/')
+						elif platform.system() != 'Windows':
+							pass
+						xxx = open(path+'/ocrtxts/OCRResults.txt', "w")
+						xxx.write('Recognition error! Please make sure you\'re in a well lit environment. Also try to place the document at least 5 inches from your central view. ')
+						xxx.close()
+					else:
 						pass
-					xxx = open(path+'/ocrtxts/OCRResults.txt', "w")
-					xxx.write('Recognition error! Please make sure you\'re in a well lit environment. Also try to place the document at least 5 inches from your central view. ')
-					xxx.close()
-				else:
-					pass
+
+				except Exception as e:
+					beep(338,222)
+					print('\n   Recognition error!   \n   Please make sure you\'re in a well lit environment.   \n   Also try to place the document at least 5 inches from your central view.   \n')
+					say('Recognition error! Please make sure you\'re in a well lit environment. Also try to place the document at least 5 inches from your central view. ')
+					deactivatesound(titletext)
+					return
 
 				waitsnd2.set()
 				beep(538,333)
@@ -7646,6 +7864,7 @@ def soundrecordingmode():
 
 # VIsION Options
 startupcounter = 0
+
 while 1:
 	title("   VIsION Open Source DIY AI Glasses   ")
 	try:
@@ -7656,6 +7875,7 @@ while 1:
 			os.system('cls')
 			os.system('taskkill /f /im ffmpeg.exe /t')
 			os.system('cls')
+
 		elif platform.system() != 'Windows':
 			os.system('kill -9 $(ps -x | grep firefox)')
 			os.system('clear')
@@ -7666,11 +7886,18 @@ while 1:
 
 	startupcounter += 1
 	while 1:
-		if startupcounter %5 == 0:
+		if startupcounter == 5 and os.path.exists(path+'/checknumruns/1.txt'):
+			nscheckultrasonic()
+			nscheckinternet()
+			nscheckcam()
+			break
+
+		elif startupcounter %5 == 0:
 			checkultrasonic()
 			checkinternet()
 			checkcam()
 			break
+
 		else:
 			break
 
@@ -7778,31 +8005,40 @@ while 1:
 					if platform.system() == 'Windows':
 						print('\n   Initializing Pocket PC Mode.   \n   Deactivating VIsION ...   \n')
 						say('Initializing pocket PC mode. ')
-						try:
-							import pyautogui
-							pyautogui.FAILSAFE = False
-							pyautogui.hotkey('winleft','r')
-							time.sleep(1)
-							pyautogui.typewrite('nvda')
-							pyautogui.press('enter')
-							time.sleep(5)
-							pyautogui.press(['ctrlleft'])
-							pyautogui.press(['esc','esc','esc','esc','esc'])
-							beep(338,333)
-							beep(238,222)
-							beep(138,111)
-							say('Now deactivating vision. ')
-							os.system('cls')
-							sys.exit()
-						except Exception as e:
-							print('\n   No NVDA installation found.   \n   Please install NVDA.   \n   Then make sure its main executable is in the system path ...   \n')
-							beep(238,333)
-							say('NVDA not found. Please install. And make sure its main executable is in the system path. ')
-							os.system('cls')
-							break
+						os.system('narrator')
+						time.sleep(2)
+						beep(338,333)
+						beep(238,222)
+						beep(138,111)
+						say('Now deactivating vision. ')
+						os.system('cls')
+						sys.exit()
+
 					elif platform.system() != 'Windows':
+						### If you're on Linux, then you can install Orca if you want a screenreader.
+						### And according to this guide ( http://techesoterica.com/?p=1135 ), hhere's how to do this in Raspbian (tested to work in Stretch and older, but there's an issue in Buster at the time of this writing):
+
+						#### Install the sox package for multimedia libraries. Some of them may be needed by speech dispatcher.
+						####apt-get install sox -y
+						#### Install the speech dispatcher service. Orca needs to talk to speech synthesizer. Be warned, this is an older version of speech dispatcher. There is a new one available on github, but I haven't tried compiling it from source on this installation.
+						####apt-get install speech-dispatcher -y
+						#### Install espeak speech synthesizer
+						####apt-get install espeak -y
+						#### Install Orca screenreader and associated dependencies
+						####apt-get install gnome-orca -y
+						#### Then reboot.
+
+						beep(338,333)
 						print('\n   Initializing Pocket PC Mode.   \n   Deactivating VIsION ...   \n')
 						say('Initializing pocket PC mode. ')
+						os.system('startx')
+
+						beep(338,333)
+						print('\n   Starting Orca Screenreader ...   \n')
+						say('Starting Orca screenreader. ')
+						os.system('orca')
+						time.sleep(3)
+
 						beep(338,333)
 						beep(238,222)
 						beep(138,111)
