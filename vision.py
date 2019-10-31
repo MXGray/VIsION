@@ -44,7 +44,7 @@ from io import BytesIO
 ## And We'll Use This Package to Send Emails from Gmail
 import yagmail
 
-## Hold on! Let's Check Your System
+## And Let's Check Your System to Know If We Want to Import Win32GUI
 if platform.system() == 'Windows':
 	import win32gui
 	import win32process
@@ -89,7 +89,7 @@ elif platform.system() != 'Windows':
 	def beep(f,d):
 		os.system('beep -f %s -l %s' % (f,d))
 
-## And Yes, We Want Some Sort of TTS.
+## And Yes, We Want Some Sort of Text-to-Speech.
 ## Text-to-Speech
 if platform.system() == 'Windows':
 	### Windows-Specific TTS (Text to Speech) Packages
@@ -263,7 +263,7 @@ def checkcam():
 		say('Now deactivating vision. ')
 		sys.exit()
 
-## Let's Silently Check If You're Using a Devantech SRF10 Ultrasonic Ranger
+## Let's Also Instantiate This to Silently Check Later on If You're Devantech SRF10 Ultrasonic Ranger is Still Working
 from usb_iss import UsbIss, defs
 iss = UsbIss()
 def nscheckultrasonic():
@@ -290,7 +290,7 @@ def nscheckultrasonic():
 		beep(138,333)
 		print('\n   No Ultrasonic Ranger Found ...   \n   Disabling Distance Sensing ...   \n')
 
-## Now Let's Silently Check If You're Using an Internet Connection.
+## Now This is for Silently Checking Later on If You're Internet Connection is Still Active
 def nscheckinternet():
 	beep(538,333)
 	print('\n   Checking Internet Connectivity ...   \n')
@@ -316,7 +316,7 @@ def nscheckinternet():
 		beep(238,333)
 		print('\n  Offline Mode Enabled - Inactive Internet Connection ...   \n')
 
-## Let's Silently Clean Up the Environment
+## And Let's Instantiate This to Silently Clean Up the Environment Later
 global path
 path = os.path.dirname(os.path.realpath(__file__))
 def nscleanup():
@@ -351,7 +351,7 @@ def nscleanup():
 		say('Problem loading! Navigation mode deactivating now! Try to run again!  ')
 		print('\n   Problem Loading ...   \n   Navigation Mode Deactivating Now ...   \n   Try Running Again ...   \n')
 
-## Let's Silently Check Your USB Camera
+## And Here's Another Silent USB Camera Checker That We Can Use Later
 def nscheckcam():
 	beep(538,333)
 	print('\n   Checking Camera Hardware ...   \n')
@@ -390,7 +390,7 @@ def nscheckcam():
 		sys.exit()
 
 
-## So Let's Instantiate a Deactivate Sound Template
+## And Let's Instantiate a Deactivate Sound Template
 def deactivatesound(titletext):
 	beep(338,333)
 	beep(238,222)
@@ -466,6 +466,7 @@ print('\n\n   VIsION   \n\n  Open Source, Do-It-Yourself  \n AI-Powered Eyeglass
 say('Vision. Open source, do it yourself, ')
 say(', AI powered, eyeglasses for the blind. ')
 
+## Here's Something to Control Audible Output Depending on Number of Fresh Runs
 def checknumruns():
 	if os.path.exists(path+'/checknumruns/1.txt'):
 		os.rename(path+'/checknumruns/1.txt', path+'/checknumruns/2.txt')
@@ -497,12 +498,13 @@ try:
 except Exception as e:
 	pass
 
-if os.path.exists(path+'/checknumruns/2.txt') or os.path.exists(path+'/checknumruns/3.txt') or os.path.exists(path+'/checknumruns/4.txt') or os.path.exists(path+'/checknumruns/5.txt') or os.path.exists(path+'/checknumruns/6.txt') or os.path.exists(path+'/checknumruns/7.txt') or os.path.exists(path+'/checknumruns/8.txt') or os.path.exists(path+'/checknumruns/9.txt') or os.path.exists(path+'/checknumruns/10.txt') or os.path.exists(path+'/checknumruns/11.txt'):
+if os.path.exists(path+'/checknumruns/1.txt'):
 	checkultrasonic()
 	checkinternet()
 	cleanup()
 	checkcam()
-elif os.path.exists(path+'/checknumruns/1.txt'):
+
+elif os.path.exists(path+'/checknumruns/2.txt') or os.path.exists(path+'/checknumruns/3.txt') or os.path.exists(path+'/checknumruns/4.txt') or os.path.exists(path+'/checknumruns/5.txt') or os.path.exists(path+'/checknumruns/6.txt') or os.path.exists(path+'/checknumruns/7.txt') or os.path.exists(path+'/checknumruns/8.txt') or os.path.exists(path+'/checknumruns/9.txt') or os.path.exists(path+'/checknumruns/10.txt') or os.path.exists(path+'/checknumruns/11.txt'):
 	nscheckultrasonic()
 	nlcheckinternet()
 	nscleanup()
@@ -556,7 +558,7 @@ gender_net.setPreferableBackend(cv2.dnn.DNN_BACKEND_DEFAULT)
 #gender_net.setPreferableBackend(cv2.dnn.DNN_BACKEND_INFERENCE_ENGINE)
 gender_net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
-#  Do You Want to Use IoT API Services?
+#  Do You Want to Use Third Party IoT API Services?
 ## Microsoft CIS Vision API Credentials
 global onlinescenedescriptor_subscription_key
 onlinescenedescriptor_subscription_key = "Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here"
@@ -567,9 +569,10 @@ if onlinescenedescriptor_subscription_key != 'Enter-Your-Microsoft-CIS-Computer-
 	onlinescenedescriptor_analyze_url = onlinescenedescriptor_base_url + "analyze"
 
 elif onlinescenedescriptor_subscription_key == 'Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here':
-	print('\n   Offline Mode Only ...   \n   No Microsoft CIS Computer Vision API Credentials Found ...   \n   To enable faster recognition mode, open vision.py File. Press ctrl+f and type onlinescenedescriptor_subscription_key to supply your API key ...   \n')
 	beep(238,333)
-	say('Offline mode only. No Microsoft C I S computer vision API credentials found. To enable faster recognition mode, open vision.py file. Press control then F and type onlinescenedescriptor_subscription_key to supply your API key. ')
+	print('\n   Offline Mode Only ...   \n   No Microsoft CIS Computer Vision API Credentials Found ...   \n   To enable faster recognition mode, open vision.py File. Press ctrl+f and type onlinescenedescriptor_subscription_key to supply your API key ...   \n')
+	if os.path.exists(path+'/checknumruns/1.txt'):
+		say('Offline mode only. No Microsoft C I S computer vision API credentials found. To enable faster recognition mode, open vision.py file. Press control then F and type onlinescenedescriptor_subscription_key to supply your API key. ')
 
 ## Microsoft CIS OCR API Credentials
 global onlineocr_subscription_key
@@ -581,9 +584,10 @@ if onlineocr_subscription_key != 'Enter-Your-Microsoft-CIS-Computer-Vision-API-K
 	text_recognition_url = onlineocr_base_url + 'read/core/asyncBatchAnalyze'
 
 elif onlineocr_subscription_key == 'Enter-Your-Microsoft-CIS-Computer-Vision-API-Key-Here':
-	print('\n   Offline Mode Only ...   \n   No Microsoft CIS Computer Vision API Credentials Found ...   \n   To enable faster OCR mode, open vision.py File. Press ctrl+f and type onlineocr_subscription_key to supply your API key ...   \n')
 	beep(238,333)
-	say('Offline mode only. No Microsoft C I S computer vision API credentials found. To enable faster OCR mode, open vision.py file. Press control then f and type onlineocr_subscription_key to supply your API key. ')
+	print('\n   Offline Mode Only ...   \n   No Microsoft CIS Computer Vision API Credentials Found ...   \n   To enable faster OCR mode, open vision.py File. Press ctrl+f and type onlineocr_subscription_key to supply your API key ...   \n')
+	if os.path.exists(path+'/checknumruns/1.txt'):
+		say('Offline mode only. No Microsoft C I S computer vision API credentials found. To enable faster OCR mode, open vision.py file. Press control then f and type onlineocr_subscription_key to supply your API key. ')
 
 ## Cloudsight Image Classification API Credentials
 import cloudsight
@@ -597,14 +601,16 @@ if onetimerecognition_api_key != 'Enter-Your-Cloudsight-API-Key-Here':
 		onetimerecognition_api_base_url = 'https://api.cloudsightapi.com'
 
 	elif onetimerecognition_API == 'Enter-Your-Cloudsight-API-Here':
-		print('\n   Offline Mode Only ...   \n   No Cloudsight API Credentials Found ...   \n   To enable one-time recognition mode, open vision.py File. Press ctrl+f and type onetimerecognition_API to supply your API keys ...   \n')
 		beep(238,333)
-		say('Offline mode only. No Cloudsight API credentials found. To enable one time recognition mode, open vision.py file. Press control then f and type onetimerecognition_API to supply your API keys. ')
+		print('\n   Offline Mode Only ...   \n   No Cloudsight API Credentials Found ...   \n   To enable one-time recognition mode, open vision.py File. Press ctrl+f and type onetimerecognition_API to supply your API keys ...   \n')
+		if os.path.exists(path+'/checknumruns/1.txt'):
+			say('Offline mode only. No Cloudsight API credentials found. To enable one time recognition mode, open vision.py file. Press control then f and type onetimerecognition_API to supply your API keys. ')
 
 elif onetimerecognition_api_key == 'Enter-Your-Cloudsight-API-Key-Here':
-	print('\n   Offline Mode Only ...   \n   No Cloudsight API Credentials Found ...   \n   To enable one-time recognition mode, open vision.py File. Go to lines 312 and 313. Supply your API keys ...   \n')
 	beep(238,333)
-	say('Offline mode only. No Cloudsight API credentials found. To enable one time recognition mode, open vision.py file. Press control then f and type onetimerecognition_API to supply your API keys. ')
+	print('\n   Offline Mode Only ...   \n   No Cloudsight API Credentials Found ...   \n   To enable one-time recognition mode, open vision.py File. Go to lines 312 and 313. Supply your API keys ...   \n')
+	if os.path.exists(path+'/checknumruns/1.txt'):
+		say('Offline mode only. No Cloudsight API credentials found. To enable one time recognition mode, open vision.py file. Press control then f and type onetimerecognition_API to supply your API keys. ')
 
 
 # Parent Thread of SeeingWithSound Mode
@@ -612,7 +618,7 @@ def seeingwithsoundmode():
 	title("   SeeingWithSound Mode   ")
 	titletext = 'SeeingWithSound Mode'
 
-	cleanup()
+	nscleanup()
 	intromsg(titletext)
 
 	# Distance Estimation Engine
@@ -744,6 +750,7 @@ def navigationmode():
 	titletext = 'Navigation Mode'
 
 	intromsg(titletext)
+	nscleanup()
 	gc.collect()
 
 	vs = WebcamVideoStream(src=0).start()
@@ -2900,6 +2907,7 @@ def offlinenavigationmode():
 	title("  VIsION Navigation Mode  ")
 	titletext = 'Navigation Mode'
 
+	nscleanup()
 	intromsg(titletext)
 	gc.collect()
 
@@ -6291,7 +6299,7 @@ def onlineocr():
 				titletext = 'OCR Mode'
 
 				path = os.path.dirname(os.path.realpath(__file__))
-				cleanup()
+				nscleanup()
 				intromsg(titletext)
 				gc.collect()
 
@@ -6763,7 +6771,7 @@ def offlineocr():
 				titletext = 'OCR Mode'
 
 				path = os.path.dirname(os.path.realpath(__file__))
-				cleanup()
+				nscleanup()
 				intromsg(titletext)
 				gc.collect()
 
