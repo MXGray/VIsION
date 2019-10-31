@@ -7980,12 +7980,14 @@ while 1:
 					if platform.system() == 'Windows' and istatus == 'true':
 						manualvisualassistance()
 						break
+
 					elif platform.system() != 'Windows' and istatus == 'true':
 						print('\n   Manual Visual Assistance Mode soon to be Implemented in Non-Windows Platforms ...   \n')
 						beep(238,333)
 						say('Manual visual assistance mode for non Windows platforms will be implemented soon. ')
 						os.system('clear')
 						break
+
 					elif istatus == 'false':
 						print('\n   Manual Visual Assistance Mode Requires Internet Connection ...   \n')
 						beep(238,333)
