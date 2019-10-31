@@ -194,7 +194,6 @@ def cleanup():
 	beep(538,333)
 	print('\n   Preparing Virtual Environment ...   \n')
 	say('Preparing virtual environment. ')
-	global path
 	path = os.path.dirname(os.path.realpath(__file__))
 
 	try:
@@ -317,12 +316,10 @@ def nscheckinternet():
 		print('\n  Offline Mode Enabled - Inactive Internet Connection ...   \n')
 
 ## And Let's Instantiate This to Silently Clean Up the Environment Later
-global path
 path = os.path.dirname(os.path.realpath(__file__))
 def nscleanup():
 	beep(538,333)
 	print('\n   Preparing Virtual Environment ...   \n')
-	global path
 	path = os.path.dirname(os.path.realpath(__file__))
 
 	try:
@@ -506,7 +503,7 @@ if os.path.exists(path+'/checknumruns/1.txt'):
 
 elif os.path.exists(path+'/checknumruns/2.txt') or os.path.exists(path+'/checknumruns/3.txt') or os.path.exists(path+'/checknumruns/4.txt') or os.path.exists(path+'/checknumruns/5.txt') or os.path.exists(path+'/checknumruns/6.txt') or os.path.exists(path+'/checknumruns/7.txt') or os.path.exists(path+'/checknumruns/8.txt') or os.path.exists(path+'/checknumruns/9.txt') or os.path.exists(path+'/checknumruns/10.txt') or os.path.exists(path+'/checknumruns/11.txt'):
 	nscheckultrasonic()
-	nlcheckinternet()
+	nscheckinternet()
 	nscleanup()
 	nscheckcam()
 
@@ -7494,27 +7491,23 @@ def manualvisualassistance():
 	title('MANUAL_VISUAL_ASSISTANCE')
 	titletext = 'Manual Visual Assistance Mode'
 
-	cleanup()
+	nscleanup()
 	intromsg(titletext)
 
 	while 1:
 		buttonpress = -1
 		selectiontimelimit = time.time() + 90
 		peerlist = ['mvastart1.bat','mvastart2.bat']
-		namelist = ['echo123','visionliveguide','cherry.melencio','Deactivate Manual Visual Assistance']
+		namelist = ['echo123','visionliveguide','Deactivate Manual Visual Assistance']
 		noofpeers = len(namelist)
 
-		dur = 333
-		freq = 333
-		#beep(freq,dur)
+		#beep(333,333)
 		say('Quick press to go through contact list! Hold press to select!  ')
 		print('\n   Quick Press to go through contact list ...   \n   Hold Press to Select ...   \n')
 
 		while 1:
 			if keyboard.is_pressed('1'):
-				freq = 438
-				dur = 111
-				beep(freq,dur)
+				beep(438,111)
 				buttonpress += 1
 				if buttonpress < noofpeers:
 					if platform.system() == 'Windows':
@@ -7660,17 +7653,16 @@ def manualvisualassistance():
 								elif platform.system() != 'Windows':
 									os.system('clear')
 								time.sleep(0.03)
-					elif buttonpress == 3:
+
+					#elif buttonpress == 3:
+					elif buttonpress == (noofpeers-1):
 						if platform.system() == 'Windows':
 							os.system('cls')
 						elif platform.system() != 'Windows':
 							os.system('clear')
-						beep(338,444)
-						beep(238,333)
-						beep(138,222)
-						say('Deactivating manual visual assistance!  ')
-						print('\n   Deactivating Manual Visual Assistance   \n')
+						deactivatesound(titletext)
 						return
+
 					else:
 						if platform.system() == 'Windows':
 							os.system('cls')
