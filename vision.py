@@ -1,7 +1,7 @@
 #!usr/bin/env python  
 #coding=utf-8  
 
-# Here's Our License
+# Here's Our License:
 #    Copyright (C) 2019  Grayscale & VIsION AI Labs Philippines
 
 ##    This program is free software: you can redistribute it and/or modify
@@ -21,10 +21,10 @@
 
 ##   To contact the author of this repository, send an email to marxvergelmelencio@gmail.com or to grayscale.consultants@gmail.com or visit their Facebook page at https://facebook.com/grayscaleconsultants ...
 
-# So Let's Import Required Packages
+# So Let's Start!
 from __future__ import print_function
 
-## Here are Some Standard Packages
+## Here are Some Standard Packages That We Need:
 import os
 os.system('color 9F')
 import subprocess
@@ -41,24 +41,24 @@ import socket
 import platform
 from io import BytesIO
 
-## And We'll Use This Package to Send Emails from Gmail
+## And We'll Use This Package to Send Emails from Gmail:
 import yagmail
 
-## And Let's Check Your System to Know If We Want to Import Win32GUI
+## And Let's Check Your System to Know If We Want to Import Win32GUI:
 if platform.system() == 'Windows':
 	import win32gui
 	import win32process
 
-## So Now Let's Import Input Device Automation and Monitoring Packages
+## So Now, Let's Import a Couple of Input Device Automation and Monitoring Packages:
 import keyboard
 import pyautogui
 pyautogui.FAILSAFE = False
 
-## And a Few Audio Generation and Processing Packages That We REALLY Need
+## Yeah, We'll Use a Couple of Audio-Related Libraries.
 import pyaudio  
 import wave  
 
-## And here are Some Image and Video Processing Libraries
+## And a Few Video & Image Processing Packages That We REALLY Need.
 import cv2
 import numpy as np
 OPENCV_VIDEOIO_PRIORITY_MSMF = 0
@@ -68,16 +68,16 @@ from imutils.video import FPS
 from PIL import Image
 
 
-# Hold on! Let's Check Your System
+# Hold on. Thinking of a Function Here. Cross Platform. But Still, Fighting Max Recursion Problem in Deep Nested Logic. Tips?
 if platform.system() == 'Windows':
 	os.system('cls')
 elif platform.system() != 'Windows':
 	os.system('clear')
 
 
-# So Now Let's Instantiate Our Collection of Non-Daemon Threads
+# Moving On, Let's Instantiate Our Collection of Non-Daemon Threads:
 
-## Yeah, We Really Need Audible Input, But Just Don't Overdo It!
+## Yeah, We Really Need Audible Prompts. But How Much?
 ## Beep Sound
 if platform.system() == 'Windows':
 	import winsound
@@ -89,7 +89,7 @@ elif platform.system() != 'Windows':
 	def beep(f,d):
 		os.system('beep -f %s -l %s' % (f,d))
 
-## And Yes, We Want Some Sort of Text-to-Speech.
+## And Yes. Of Course. We Want Spoken Prompts:
 ## Text-to-Speech
 if platform.system() == 'Windows':
 	### Windows-Specific TTS (Text to Speech) Packages
@@ -111,7 +111,7 @@ elif platform.system() != 'Windows':
 		os.system('pico2wave -w tmp.wav \"%s\"' % (s))
 		os.system('rm -rf tmp.wav')
 
-## And Now Let's Tell the Terminal to Change the Current Title
+## And Now Let's Tell the Terminal to Change the Current Title:
 if platform.system() == 'Windows':
 	import ctypes
 	def title(s):
@@ -123,7 +123,7 @@ elif platform.system() != 'Windows':
 		if os.getenv("TERM") in cmdterminal:
 			print("\x1B]0;%s\x07" % s)
 
-## Hold on! Let's Check If You Want to Use a Devantech SRF10 Ultrasonic Ranger.
+## Do You Want to Use a Devantech SRF10 Ultrasonic Ranger?
 from usb_iss import UsbIss, defs
 iss = UsbIss()
 def checkultrasonic():
@@ -156,7 +156,7 @@ def checkultrasonic():
 		beep(138,333)
 		say('Disabling distance sensing. ')
 
-## And Now Let's Check If You Want to Use an Internet Connection.
+## How About an Internet Connection?
 def checkinternet():
 	beep(538,333)
 	print('\n   Checking Internet Connectivity ...   \n')
@@ -187,7 +187,7 @@ def checkinternet():
 		beep(238,333)
 		say('Inactive Internet connection. ')
 
-## And Let's Clean Up the Environment
+## Now Let's Make Sure These Temp Files Aren't Still There
 global path
 path = os.path.dirname(os.path.realpath(__file__))
 def cleanup():
@@ -387,7 +387,7 @@ def nscheckcam():
 		sys.exit()
 
 
-## And Let's Instantiate a Deactivate Sound Template
+## And Let's Instantiate a Deactivate Sound Function
 def deactivatesound(titletext):
 	beep(338,333)
 	beep(238,222)
@@ -404,7 +404,7 @@ def deactivatesound(titletext):
 		subprocess.call('kill -9 $(ps -x | grep firefox)', creationflags=CREATE_NO_WINDOW)
 		os.system('clear')
 
-## Along with an Intro Message Template for Each Mode
+## Along with an Intro Message Function for Each Mode
 def intromsg(titletext):
 	print('\n '+titletext+' Activated!  \n\n')
 	if titletext == 'Navigation Mode' or titletext == 'Video Recording Mode' or titletext == 'Sound Recording Mode':
@@ -430,7 +430,7 @@ def intromsg(titletext):
 		os.system('clear')
 	return
 
-## As Well As a Template to Find the Window Title That We Want and Activate It
+## Do We Need a Function to Find the Window Title That We Want and Activate It Even If We'Re Already Using PyAutoGUI? Let's Leave It Here & Decide Later?
 def findwin(titletext):
 
 	if platform.system() == 'Windows':
@@ -463,7 +463,7 @@ print('\n\n   VIsION   \n\n  Open Source, Do-It-Yourself  \n AI-Powered Eyeglass
 say('Vision. Open source, do it yourself, ')
 say(', AI powered, eyeglasses for the blind. ')
 
-## Here's Something to Control Audible Output Depending on Number of Fresh Runs
+## To Control Audible Prompts, Here's Something That Depends on Number of Fresh Runs
 def checknumruns():
 	if os.path.exists(path+'/checknumruns/1.txt'):
 		os.rename(path+'/checknumruns/1.txt', path+'/checknumruns/2.txt')
@@ -509,10 +509,14 @@ elif os.path.exists(path+'/checknumruns/2.txt') or os.path.exists(path+'/checknu
 
 gc.collect()
 
-# Load VIsION Engine
+# And Now Let's Load the VIsION Engine
 beep(538,333)
 print('\n   Now Loading VIsION ML & DL Models ...   \n')
-say('Now loading vision machine learning and deep learning models. ')
+
+if os.path.exists(path+'/checknumruns/1.txt'):
+	say('Now loading vision machine learning and deep learning models. ')
+elif os.path.exists(path+'/checknumruns/2.txt') or os.path.exists(path+'/checknumruns/3.txt') or os.path.exists(path+'/checknumruns/4.txt') or os.path.exists(path+'/checknumruns/5.txt') or os.path.exists(path+'/checknumruns/6.txt') or os.path.exists(path+'/checknumruns/7.txt') or os.path.exists(path+'/checknumruns/8.txt') or os.path.exists(path+'/checknumruns/9.txt') or os.path.exists(path+'/checknumruns/10.txt') or os.path.exists(path+'/checknumruns/11.txt'):
+	pass
 
 ## Main Navigation Mode Model
 LABELS1 = open(path+'/multiobj/ade20k/classes.txt').read().strip().split("\n")
@@ -522,7 +526,7 @@ net1 = cv2.dnn.readNetFromCaffe(configPath1, weightsPath1)
 net1.setPreferableBackend(cv2.dnn.DNN_BACKEND_DEFAULT)
 net1.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
-## Person and Object Detection Tensorflow Model
+## Multi Person and Object Detection & Segmentation Tensorflow Model
 LABELS = open(path+'/multiobj/classes.txt').read().strip().split("\n")
 weightsPath = path+'/multiobj/navnet.pb'
 configPath = path+'/multiobj/navnet.pbtxt'
@@ -610,7 +614,7 @@ elif onetimerecognition_api_key == 'Enter-Your-Cloudsight-API-Key-Here':
 		say('Offline mode only. No Cloudsight API credentials found. To enable one time recognition mode, open vision.py file. Press control then f and type onetimerecognition_API to supply your API keys. ')
 
 
-# Parent Thread of SeeingWithSound Mode
+# At This Point, Let's Instantiate SeeingWithSound Mode's Parent Thread:
 def seeingwithsoundmode():
 	title("   SeeingWithSound Mode   ")
 	titletext = 'SeeingWithSound Mode'
@@ -618,7 +622,7 @@ def seeingwithsoundmode():
 	nscleanup()
 	intromsg(titletext)
 
-	# Distance Estimation Engine
+	# So Let's Estimate the Distances of Objects in Your Central View If You're Using the Devantech SRF10:
 	def distcalcx(dcx,t):
 		try:
 			iss.i2c.write(0xE0, 0x01, [0x06])
@@ -659,7 +663,7 @@ def seeingwithsoundmode():
 	dcx = threading.Event()
 	distcalcx = threading.Thread(target=distcalcx,daemon=True,args=(dcx, 0.03), )
 
-	# Run SeeingWithSound vOIC Offline Web Browser App
+	# And Here's How We Run the Freeware SeeingWithSound vOICe Offline Web Browser App
 	currdir = os.path.dirname(os.path.realpath(__file__))+'\\SeeingWithSound.html'
 	currdir = currdir.strip()
 	if platform.system() == 'Windows':
@@ -670,7 +674,7 @@ def seeingwithsoundmode():
 		os.system('clear')
 
 	beep(666,333)
-	print('\n   Quick Press to Deactivate SeeingWithSound vOIC ...   \n')
+	print('\n   Quick Press to Deactivate SeeingWithSound vOICe ...   \n')
 	say('Quick press to deactivate SeeingWithSound V O I C!  ')
 	beep(333,222)
 	pyautogui.press('esc')
@@ -722,7 +726,7 @@ def seeingwithsoundmode():
 		else:
 			time.sleep(0.1)
 
-	# Terminate SeeingWithSound Mode
+	## And Here's How SeeingWithSound Mode Terminates
 	CREATE_NO_WINDOW = 0x08000000
 	subprocess.call('taskkill /f /im firefox.exe /t', creationflags=CREATE_NO_WINDOW)
 	if platform.system() == 'Windows':
@@ -732,15 +736,11 @@ def seeingwithsoundmode():
 		subprocess.call('kill -9 $(ps -x | grep firefox)', creationflags=CREATE_NO_WINDOW)
 		os.system('clear')
 
-	beep(338,222)
-	beep(238,222)
-	beep(138,111)
-	say('SeeingWithSound mode deactivated!')
-	print('\n   SeeingWithSound Mode Deactivated ...   \n')
+	deactivatesound(titletext)
 	return
 
 
-# Parent Thread of Navigation Mode
+# And Here's the Parent Thread of Navigation Mode:
 def navigationmode():
 	## Initialization
 	title("  VIsION Navigation Mode  ")
@@ -760,7 +760,7 @@ def navigationmode():
 	while not time.time() > maintimelimit:
 		gc.collect()
 
-		## Check BSTATUS
+		## Let's Check If You Want to Deactivate Navigation Mode:
 		if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
 			try:
 				waitsnd1.set()
@@ -781,8 +781,8 @@ def navigationmode():
 				deactivatesound(titletext)
 				return
 
-		## Collection of Daemonic Threads
-
+		## And Let's Prepare Our Daemonic Threads, Even If They Require Unique Instanciation Inside the Running Thread
+		### Anyway, I'll Continue Narrating the Process Later.
 		#  wait sound
 		def waitsound1(waitsnd1,t):
 			time.sleep(0.1)
@@ -1437,6 +1437,7 @@ def navigationmode():
 
 		image = cv2.imread(img_path)
 		image = imutils.resize(image, width=240,height=180)
+
 		Analyzing_Snapshot = path+'/newimg/Analyzing_This_Scene.jpg'
 		beep(338,333)
 		if platform.system() == 'Windows':
@@ -1467,14 +1468,14 @@ def navigationmode():
 				deactivatesound(titletext)
 				return
 
-		## ML Model Processing
+		## DL Model Processing
 		blob = cv2.dnn.blobFromImage(image, swapRB=True, crop=False)
 		net1.setInput(blob)
 		score1 = net1.forward()
 		classIds = np.argmax(score1[0], axis=0)
 		uniqueclassids = np.unique(classIds)
 		noofobjs = len(uniqueclassids)
-		noteableobjs = float(noofobjs*0.40)
+		noteableobjs = float(noofobjs*0.60)
 		noteableobjs = round(noteableobjs,0)
 		noteableobjs = int(noteableobjs)
 		num = 0
@@ -2114,7 +2115,7 @@ def navigationmode():
 			os.system('clear')
 
 
-		# Person Detector
+		# Multi Person & Object Detector
 		gc.collect()
 		while 1:
 
@@ -3273,6 +3274,7 @@ def offlinenavigationmode():
 
 		image = cv2.imread(img_path)
 		image = imutils.resize(image, width=240,height=180)
+
 		Analyzing_Snapshot = path+'/newimg/Analyzing_This_Scene.jpg'
 		beep(338,333)
 		if platform.system() == 'Windows':
@@ -3301,14 +3303,14 @@ def offlinenavigationmode():
 				deactivatesound(titletext)
 				return
 
-		## ML Model Processing
+		## DL Model Processing
 		blob = cv2.dnn.blobFromImage(image, swapRB=True, crop=False)
 		net1.setInput(blob)
 		score1 = net1.forward()
 		classIds = np.argmax(score1[0], axis=0)
 		uniqueclassids = np.unique(classIds)
 		noofobjs = len(uniqueclassids)
-		noteableobjs = float(noofobjs*0.40)
+		noteableobjs = float(noofobjs*0.60)
 		noteableobjs = round(noteableobjs,0)
 		noteableobjs = int(noteableobjs)
 		num = 0
@@ -3902,7 +3904,7 @@ def offlinenavigationmode():
 			os.system('clear')
 
 
-		# Person Detector
+		# Multi Person & Object Detector
 		gc.collect()
 		while 1:
 
@@ -5007,6 +5009,7 @@ def offlinenavigationmode():
 
 		image = cv2.imread(img_path)
 		image = imutils.resize(image, width=240,height=180)
+
 		Analyzing_Snapshot = path+'/newimg/Analyzing_This_Scene.jpg'
 		beep(338,333)
 		if platform.system() == 'Windows':
@@ -5033,14 +5036,14 @@ def offlinenavigationmode():
 				deactivatesound(titletext)
 				return
 
-		## ML Model Processing
+		## DL Model Processing
 		blob = cv2.dnn.blobFromImage(image, swapRB=True, crop=False)
 		net1.setInput(blob)
 		score1 = net1.forward()
 		classIds = np.argmax(score1[0], axis=0)
 		uniqueclassids = np.unique(classIds)
 		noofobjs = len(uniqueclassids)
-		noteableobjs = float(noofobjs*0.40)
+		noteableobjs = float(noofobjs*0.60)
 		noteableobjs = round(noteableobjs,0)
 		noteableobjs = int(noteableobjs)
 		num = 0
@@ -5588,7 +5591,7 @@ def offlinenavigationmode():
 			os.system('clear')
 
 
-		# Person Detector
+		# Multi Person & Object Detector
 		gc.collect()
 		while 1:
 
@@ -7211,7 +7214,7 @@ def onetimeobjectrecognition():
 	title("  VIsION One-Time Recognition Mode  ")
 	titletext = 'One-Time Recognition Mode'
 
-	cleanup()
+	nscleanup()
 	intromsg(titletext)
 
 	#  wait sound
@@ -7484,6 +7487,852 @@ def onetimeobjectrecognition():
 	#os.system('cls')
 	#print('\n   Cloudsight Processing Took '+totaltime+' Seconds ...   \n')
 	#say('Cloudsight processing took '+totaltime+' seconds!  ')
+
+
+# Offline Recognition Mode
+def offlinerecognitionmode():
+	title("  VIsION Offline Recognition Mode  ")
+	titletext = 'Offline Recognition Mode'
+
+	nscleanup()
+	intromsg(titletext)
+
+	# Processing Sound
+	def procsound1():
+		try:
+			# Define Stream Chunk
+			chunk = 1024
+			# Open WAV
+			f = wave.open('takesnapshot.wav', "rb")
+			# Instantiate PyAudio
+			p = pyaudio.PyAudio()  
+			# Open Stream
+			stream = p.open(format = p.get_format_from_width(f.getsampwidth()), channels = f.getnchannels(), rate = f.getframerate(), output = True)
+			# Read Data from Stream
+			data = f.readframes(chunk)  
+			# Play Stream
+			while data:
+				stream.write(data)
+				data = f.readframes(chunk)
+			# Stop Stream
+			stream.stop_stream()
+			stream.close()
+			# Close PyAudio
+			p.terminate()
+			gc.collect()
+			#sys.exit()
+
+		except Exception as e:
+			print(e)
+			#deactivatesound()
+
+	def inst():
+		freq = 538
+		dur = 333
+		beep(freq,dur)
+		say('Quick press or hold press to deactivate! Or leave idle for auto deactivation!  ')
+		print('\n   Quick press or hold press to deactivate ...   \n   Or Leave Idle for Auto Deactivation ...   \n')
+
+	inst = threading.Thread(target=inst,daemon=True)
+	inst.start()
+
+	# Capture Image
+	vs = WebcamVideoStream(src=0).start()
+
+	window_name = "VIsION_CAM"
+	interframe_wait_ms = 2500
+	cv2.namedWindow(window_name, cv2.WND_PROP_FULLSCREEN)
+	cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+	# Multi Person & Object Detector
+	gc.collect()
+
+	timelimit = time.time() + 600
+	while not time.time() > timelimit:
+
+		## Check BSTATUS
+		if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+			try:
+				waitsnd1.set()
+				dc1.set()
+				cv2.destroyAllWindows()
+				vs.stop()
+				if platform.system() == 'Windows':
+					os.system('taskkill /f /im firefox.exe /t')
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('kill -9 $(ps -x | grep firefox)')
+					os.system('clear')
+				deactivatesound(titletext)
+				return
+			except Exception as e:
+				deactivatesound(titletext)
+				return
+
+		while 1:
+			#  wait sound
+			def waitsound1(waitsnd1,t):
+				time.sleep(0.1)
+				speakthisnow = ['Processing!  ','Analyzing!  ','Please wait!  ','Processing! Please wait!  ','Analyzing!  One moment!  ','One moment!  ','A moment please!  ']
+				psndcounter = -1
+				psndcounter2 = -1
+				say(random.choice(speakthisnow))
+				print('\n   '+random.choice(speakthisnow)+'   \n')
+				if platform.system() == 'Windows':
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('clear')
+				while not waitsnd1.is_set():
+					psndcounter += 25
+					psndcounter2 += 0.01
+					freq = 338 + psndcounter 
+					dur = 66
+					beep(freq,dur)
+					time.sleep(0.2-psndcounter2)
+					event_is_set = waitsnd1.wait(t)
+					if event_is_set:
+						break
+				return
+
+			waitsnd1 = threading.Event()
+			waitsound1 = threading.Thread(target=waitsound1,daemon=True,args=(waitsnd1, 0.03), )
+
+			## Distance Estimation Engine
+			def distcalc1(dc1,t):
+				try:
+					iss.i2c.write(0xE0, 0x01, [0x06])
+					iss.i2c.write(0xE0, 0x02, [0xFF])
+					distcalctimelimit = time.time() + 9
+					while time.time() < distcalctimelimit:
+						event_is_set = dc1.wait(t)
+						if event_is_set:
+							iss.i2c.write(0xE0, 0x00, [0x50])
+							time.sleep(0.067)
+							data = iss.i2c.read(0xE0, 0x03, 1)
+							data = data[0]
+							data = int(data)
+							if data > 0 and data < 24:
+								data = str(data)
+								beep(338,222)
+								say('Distance is '+data+' inches! ')
+								break
+							elif data > 24 and 	data < 108:
+								data = int(data) / int(12)
+								data = round(data,1)
+								data = str(data)
+								beep(338,222)
+								say('Distance is '+data+' feet! ')
+								break
+							elif data > 108:
+								beep(338,222)
+								say('Distance is beyond nine feet! ')
+								break
+							elif data == 0:
+								beep(538,111)
+								time.sleep(0.067)
+						else:
+							time.sleep(0.01)
+					return
+				except Exception as e:
+					print(e)
+	
+			dc1 = threading.Event()
+			distcalc1 = threading.Thread(target=distcalc1,daemon=True,args=(dc1, 0.03), )
+	
+			## Check BSTATUS
+			if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+				try:
+					waitsnd1.set()
+					dc1.set()
+					cv2.destroyAllWindows()
+					vs.stop()
+					if platform.system() == 'Windows':
+						os.system('taskkill /f /im firefox.exe /t')
+						os.system('cls')
+					elif platform.system() != 'Windows':
+						os.system('kill -9 $(ps -x | grep firefox)')
+						os.system('clear')
+					deactivatesound(titletext)
+					return
+				except Exception as e:
+					deactivatesound(titletext)
+					return
+
+			frame = vs.read()
+			frame = imutils.resize(frame, width=1600,height=1200)
+			img_path = 'newimg/Analyzing_This_Scene.jpg'
+			beep(333,333)
+			cv2.imshow(window_name, frame)
+			cv2.waitKey(interframe_wait_ms)
+
+			## Check BSTATUS
+			if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+				try:
+					waitsnd1.set()
+					dc1.set()
+					cv2.destroyAllWindows()
+					vs.stop()
+					if platform.system() == 'Windows':
+						os.system('taskkill /f /im firefox.exe /t')
+						os.system('cls')
+					elif platform.system() != 'Windows':
+						os.system('kill -9 $(ps -x | grep firefox)')
+						os.system('clear')
+					deactivatesound(titletext)
+					return
+				except Exception as e:
+					deactivatesound(titletext)
+					return
+
+			procsound1()
+			waitsound1.start()
+
+			## Check BSTATUS
+			if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+				try:
+					waitsnd1.set()
+					dc1.set()
+					cv2.destroyAllWindows()
+					vs.stop()
+					if platform.system() == 'Windows':
+						os.system('taskkill /f /im firefox.exe /t')
+						os.system('cls')
+					elif platform.system() != 'Windows':
+						os.system('kill -9 $(ps -x | grep firefox)')
+						os.system('clear')
+					deactivatesound(titletext)
+					return
+				except Exception as e:
+					deactivatesound(titletext)
+					return
+
+			if ultrasonic == 'true':
+				distcalc1.start()
+			elif ultrasonic == 'false':
+				pass
+
+			## Check BSTATUS
+			if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+				try:
+					waitsnd1.set()
+					dc1.set()
+					cv2.destroyAllWindows()
+					vs.stop()
+					if platform.system() == 'Windows':
+						os.system('taskkill /f /im firefox.exe /t')
+						os.system('cls')
+					elif platform.system() != 'Windows':
+						os.system('kill -9 $(ps -x | grep firefox)')
+						os.system('clear')
+					deactivatesound(titletext)
+					return
+				except Exception as e:
+					deactivatesound(titletext)
+					return
+
+			cv2.imwrite(img_path, frame)
+			# Cam Cleanup
+			cv2.destroyAllWindows()
+
+			## Check BSTATUS
+			if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+				try:
+					waitsnd1.set()
+					dc1.set()
+					cv2.destroyAllWindows()
+					vs.stop()
+					if platform.system() == 'Windows':
+						os.system('taskkill /f /im firefox.exe /t')
+						os.system('cls')
+					elif platform.system() != 'Windows':
+						os.system('kill -9 $(ps -x | grep firefox)')
+						os.system('clear')
+					deactivatesound(titletext)
+					return
+				except Exception as e:
+					deactivatesound(titletext)
+					return
+
+			if platform.system() == 'Windows':
+				os.system('cls')
+			elif platform.system() != 'Windows':
+				os.system('clear')
+
+			cv2.destroyAllWindows()
+			break
+
+		image = cv2.imread(img_path)
+		#clone = image.copy()
+		(H, W) = image.shape[:2]
+
+		## Check BSTATUS
+		if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+			try:
+				waitsnd1.set()
+				dc1.set()
+				cv2.destroyAllWindows()
+				vs.stop()
+				if platform.system() == 'Windows':
+					os.system('taskkill /f /im firefox.exe /t')
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('kill -9 $(ps -x | grep firefox)')
+					os.system('clear')
+				deactivatesound(titletext)
+				return
+			except Exception as e:
+				deactivatesound(titletext)
+				return
+
+		Analyzing_Snapshot = path+'/newimg/Analyzing_This_Scene.jpg'
+		beep(338,333)
+		if platform.system() == 'Windows':
+			os.system(Analyzing_Snapshot)
+		elif platform.system() != 'Windows':
+			os.system('firefox '+Analyzing_Snapshot)
+
+		## Check BSTATUS
+		if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+			try:
+				waitsnd1.set()
+				dc1.set()
+				cv2.destroyAllWindows()
+				vs.stop()
+				if platform.system() == 'Windows':
+					os.system('taskkill /f /im firefox.exe /t')
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('kill -9 $(ps -x | grep firefox)')
+					os.system('clear')
+				deactivatesound(titletext)
+				return
+			except Exception as e:
+				deactivatesound(titletext)
+				return
+
+		## DL Model Processing
+		blob = cv2.dnn.blobFromImage(image, swapRB=True, crop=False)
+		net.setInput(blob)
+		(boxes, masks) = net.forward(["detection_out_final", "detection_masks"])
+
+		## Check BSTATUS
+		if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+			try:
+				waitsnd1.set()
+				dc1.set()
+				cv2.destroyAllWindows()
+				vs.stop()
+				if platform.system() == 'Windows':
+					os.system('taskkill /f /im firefox.exe /t')
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('kill -9 $(ps -x | grep firefox)')
+					os.system('clear')
+				deactivatesound(titletext)
+				return
+			except Exception as e:
+				deactivatesound(titletext)
+				return
+
+		if len(boxes) == 0:
+
+			## Check BSTATUS
+			if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+				try:
+					waitsnd1.set()
+					dc1.set()
+					cv2.destroyAllWindows()
+					vs.stop()
+					if platform.system() == 'Windows':
+						os.system('taskkill /f /im firefox.exe /t')
+						os.system('cls')
+					elif platform.system() != 'Windows':
+						os.system('kill -9 $(ps -x | grep firefox)')
+						os.system('clear')
+					deactivatesound(titletext)
+					return
+				except Exception as e:
+					deactivatesound(titletext)
+					return
+
+			numpers = 'Nobody\'s in front of you! '
+			numobjs = 'No object!  '
+			waitsnd1.set()
+			beep(538,333)
+			say(numpers+numobjs)
+
+			## Check BSTATUS
+			if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+				try:
+					waitsnd1.set()
+					dc1.set()
+					cv2.destroyAllWindows()
+					vs.stop()
+					if platform.system() == 'Windows':
+						os.system('taskkill /f /im firefox.exe /t')
+						os.system('cls')
+					elif platform.system() != 'Windows':
+						os.system('kill -9 $(ps -x | grep firefox)')
+						os.system('clear')
+					deactivatesound(titletext)
+					return
+				except Exception as e:
+					deactivatesound(titletext)
+					return
+
+			if ultrasonic == 'true':
+				dc1.set()
+			elif ultrasonic == 'false':
+				pass
+
+		elif len(boxes) > 0:
+			finlist = []
+			yyy = 0
+			zzz = 0
+
+			## Check BSTATUS
+			if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+				try:
+					waitsnd1.set()
+					dc1.set()
+					cv2.destroyAllWindows()
+					vs.stop()
+					if platform.system() == 'Windows':
+						os.system('taskkill /f /im firefox.exe /t')
+						os.system('cls')
+					elif platform.system() != 'Windows':
+						os.system('kill -9 $(ps -x | grep firefox)')
+						os.system('clear')
+					deactivatesound(titletext)
+					return
+				except Exception as e:
+					deactivatesound(titletext)
+					return
+
+			for i in range(0, 	boxes.shape[2]):
+
+				## Check BSTATUS
+				if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+					try:
+						waitsnd1.set()
+						dc1.set()
+						cv2.destroyAllWindows()
+						vs.stop()
+						if platform.system() == 'Windows':
+							os.system('taskkill /f /im firefox.exe /t')
+							os.system('cls')
+						elif platform.system() != 'Windows':
+							os.system('kill -9 $(ps -x | grep firefox)')
+							os.system('clear')
+						deactivatesound(titletext)
+						return
+					except Exception as e:
+						deactivatesound(titletext)
+						return
+
+				classID = int(boxes[0, 0, i, 1])
+				confidence = boxes[0, 0, i, 2]
+
+				## Check BSTATUS
+				if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+					try:
+						waitsnd1.set()
+						dc1.set()
+						cv2.destroyAllWindows()
+						vs.stop()
+						if platform.system() == 'Windows':
+							os.system('taskkill /f /im firefox.exe /t')
+							os.system('cls')
+						elif platform.system() != 'Windows':
+							os.system('kill -9 $(ps -x | grep firefox)')
+							os.system('clear')
+						deactivatesound(titletext)
+						return
+					except Exception as e:
+						deactivatesound(titletext)
+						return
+
+				if confidence > 0.5:
+
+					## Check BSTATUS
+					if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+						try:
+							waitsnd1.set()
+							dc1.set()
+							cv2.destroyAllWindows()
+							vs.stop()
+							if platform.system() == 'Windows':
+								os.system('taskkill /f /im firefox.exe /t')
+								os.system('cls')
+							elif platform.system() != 'Windows':
+								os.system('kill -9 $(ps -x | grep firefox)')
+								os.system('clear')
+							deactivatesound(titletext)
+							return
+						except Exception as e:
+							deactivatesound(titletext)
+							return
+
+					box = boxes[0, 0, i, 3:7] * np.array([W, H, W, H])
+					(startX, startY, endX, endY) = box.astype("int")
+					boxW = endX - startX
+					boxH = endY - startY
+					x = (startX + endX) / 2
+					y = (startY + endY) / 2.50
+
+					## Check BSTATUS
+					if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+						try:
+							waitsnd1.set()
+							dc1.set()
+							cv2.destroyAllWindows()
+							vs.stop()
+							if platform.system() == 'Windows':
+								os.system('taskkill /f /im firefox.exe /t')
+								os.system('cls')
+							elif platform.system() != 'Windows':
+								os.system('kill -9 $(ps -x | grep firefox)')
+								os.system('clear')
+							deactivatesound(titletext)
+							return
+						except Exception as e:
+							deactivatesound(titletext)
+							return
+
+					if x <= 320 and y <= 240:
+						z = '1 '
+						zz = ' Left side. Ten o\'clock.  '
+					elif x >= 321 and x <= 1280 and y <= 240:
+						z = '4 '
+						zz = ' Center. Twelve o\'clock.  '
+					elif x >= 1281 and y <= 240:
+						z = '7 '
+						zz = ' Right side. One o\'clock.  '
+					elif x <= 320 and y >= 241 and y <= 960:
+						z = '2 '
+						zz = ' Left side. Nine o\'clock.  '
+					elif x >= 321 and x <= 1280 and y >= 241 and y <= 960:
+						z = '5 '
+						zz = ' Dead center.  '
+					elif x >= 1281 and y >= 241 and y <= 960:
+						z = '8 '
+						zz = ' Right side. Three o\'clock.  '
+					elif x <= 320 and y >= 961:
+						z = '3 '
+						zz = ' Left side. Seven o\'clock.  '
+					elif x >= 321 and x <= 1280 and y >= 961:
+						z = '6 '
+						zz = ' Center. Six o\'clock.  '
+					elif x >= 1281 and y >= 961:
+						z = '9 '
+						zz = ' Right side. Five o\'clock.  '
+
+					text = LABELS[classID]
+					finres = text
+					finres = str(finres)
+					finres = finres.strip()
+
+					#iii = -1
+					if finres == 'person':
+						zzz += 1
+
+						# extract the ROI of the image
+						roi = image[startY:endY, startX:endX]
+						roi2 = roi
+						image2 = roi2
+						(h, w) = image2.shape[:2]
+
+						## Check BSTATUS
+						if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+							try:
+								waitsnd1.set()
+								dc1.set()
+								cv2.destroyAllWindows()
+								vs.stop()
+								if platform.system() == 'Windows':
+									os.system('taskkill /f /im firefox.exe /t')
+									os.system('cls')
+								elif platform.system() != 'Windows':
+									os.system('kill -9 $(ps -x | grep firefox)')
+									os.system('clear')
+								deactivatesound(titletext)
+								return
+							except Exception as e:
+								deactivatesound(titletext)
+								return
+
+						## DL Model Processing
+						blob = cv2.dnn.blobFromImage(cv2.resize(image2, (300, 300)), 1.0, (300, 300), (104.0, 177.0, 123.0))
+						face_net.setInput(blob)
+						detections = face_net.forward()
+						detectf = len(detections)
+
+						## Check BSTATUS
+						if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+							try:
+								waitsnd1.set()
+								dc1.set()
+								cv2.destroyAllWindows()
+								vs.stop()
+								if platform.system() == 'Windows':
+									os.system('taskkill /f /im firefox.exe /t')
+									os.system('cls')
+								elif platform.system() != 'Windows':
+									os.system('kill -9 $(ps -x | grep firefox)')
+									os.system('clear')
+								deactivatesound(titletext)
+								return
+							except Exception as e:
+								deactivatesound(titletext)
+								return
+
+						if detectf == 0:
+							agegenderfin = 'not sure of age and gender'
+							agegenderfin = agegenderfin.strip()
+							finres = finres+', '+agegenderfin
+							finlist.append(z+finres+'. '+zz)
+						elif detectf > 0:
+							#for i in range(0, detections.shape[2]):
+							confidence = detections[0, 0, i, 2]
+
+							if confidence > 0.5:
+								blob = cv2.dnn.blobFromImage(image2, 1, (227, 227), MODEL_MEAN_VALUES, swapRB=False)
+
+								#Predict Gender
+								gender_net.setInput(blob)
+								gender_preds = gender_net.forward()
+								gender = gender_list[gender_preds[0].argmax()]
+								gender = str(gender)
+								genderfin = gender.strip()
+
+								#Predict Age
+								age_net.setInput(blob)
+								age_preds = age_net.forward()
+								age = age_list[age_preds[0].argmax()]
+								age = str(age)
+								agefin = age.strip()
+								agegenderfin = agefin+' '+genderfin
+								agegenderfin = str(agegenderfin)
+								agegenderfin = agegenderfin.strip()
+
+								finres = finres+', '+agegenderfin
+								finlist.append(z+finres+'. '+zz)
+
+							else:
+								agegenderfin = 'Unsure of age and gender.  '
+								finres = finres+', '+agegenderfin
+								finlist.append(z+finres+'. '+zz)
+
+					elif finres != 'person':
+						yyy += 1
+
+						finlist.append(z+finres+'. '+zz)
+
+		## Check BSTATUS
+		if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+			try:
+				waitsnd1.set()
+				dc1.set()
+				cv2.destroyAllWindows()
+				vs.stop()
+				if platform.system() == 'Windows':
+					os.system('taskkill /f /im firefox.exe /t')
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('kill -9 $(ps -x | grep firefox)')
+					os.system('clear')
+				deactivatesound(titletext)
+				return
+			except Exception as e:
+				deactivatesound(titletext)
+				return
+
+		def isayres():
+			if zzz < 1 and yyy < 1:
+				numpers = 'Nobody\'s in front of you. '
+				numobjs = 'No object detected. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+			elif zzz < 1 and yyy == 1:
+				numpers = 'Nobody\'s in front of you. '
+				numobjs = str(yyy)+' Object. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+			elif zzz < 1 and yyy > 1:
+				numpers = 'Nobody\'s in front of you. '
+				numobjs = str(yyy)+' Objects. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+			elif zzz == 1 and yyy < 1:
+				numpers = str(zzz)+' Person. '
+				numobjs = 'No Object. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+			elif zzz == 1 and yyy == 1:
+				numpers = str(zzz)+' Person. '
+				numobjs = str(yyy)+' Object. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+			elif zzz == 1 and yyy > 1:
+				numpers = str(zzz)+' Person. '
+				numobjs = str(yyy)+' Objects. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+			elif zzz > 1 and yyy < 1:
+				numpers = str(zzz)+' Persons. '
+				numobjs = 'No object detected. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+			elif zzz > 1 and yyy == 1:
+				numpers = str(zzz)+' Persons. '
+				numobjs = str(yyy)+' Object. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+			elif zzz > 1 and yyy > 1:
+				numpers = str(zzz)+' Persons. '
+				numobjs = str(yyy)+' Objects. '
+				waitsnd1.set()
+				if ultrasonic == 'true':
+					dc1.set()
+				elif ultrasonic == 'false':
+					pass
+				beep(538,333)
+				print('\n   '+numpers+numobjs+'   \n')
+				say(numpers+numobjs)
+				time.sleep(0.3)
+
+			prlist = sorted(finlist)
+			for persandobjs in prlist:
+				persandobjs = str(persandobjs)
+				persandobjs = persandobjs.strip()
+				persandobjs = persandobjs.replace('1 ', '')
+				persandobjs = persandobjs.replace('2 ', '')
+				persandobjs = persandobjs.replace('3 ', '')
+				persandobjs = persandobjs.replace('4 ', '')
+				persandobjs = persandobjs.replace('5 ', '')
+				persandobjs = persandobjs.replace('6 ', '')
+				persandobjs = persandobjs.replace('7 ', '')
+				persandobjs = persandobjs.replace('8 ', '')
+				persandobjs = persandobjs.replace('9 ', '')
+				beep(538,333)
+				print('\n   '+persandobjs+'   \n')
+				say(persandobjs)
+				if platform.system() == 'Windows':
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('clear')
+
+		## Check BSTATUS
+		if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+			try:
+				waitsnd1.set()
+				dc1.set()
+				cv2.destroyAllWindows()
+				vs.stop()
+				if platform.system() == 'Windows':
+					os.system('taskkill /f /im firefox.exe /t')
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('kill -9 $(ps -x | grep firefox)')
+					os.system('clear')
+				deactivatesound(titletext)
+				return
+			except Exception as e:
+				deactivatesound(titletext)
+				return
+
+		isayres()
+
+		## Check BSTATUS
+		if keyboard.is_pressed('1') or keyboard.is_pressed('2'):
+			try:
+				waitsnd1.set()
+				dc1.set()
+				cv2.destroyAllWindows()
+				vs.stop()
+				if platform.system() == 'Windows':
+					os.system('taskkill /f /im firefox.exe /t')
+					os.system('cls')
+				elif platform.system() != 'Windows':
+					os.system('kill -9 $(ps -x | grep firefox)')
+					os.system('clear')
+				deactivatesound(titletext)
+				return
+			except Exception as e:
+				deactivatesound(titletext)
+				return
+
+	try:
+		cv2.destroyAllWindows()
+		vs.stop()
+		waitsnd1.set()
+		dc1.set()
+		if platform.system() == 'Windows':
+			os.system('taskkill /f /im firefox.exe /t')
+			os.system('cls')
+		elif platform.system() != 'Windows':
+			os.system('kill -9 $(ps -x | grep firefox)')
+			os.system('clear')
+	except Exception as e:
+		pass
+
+	return
 
 
 # Manual Visual Assistance
@@ -7971,9 +8820,12 @@ while 1:
 						onetimeobjectrecognition()
 						break
 					elif onetimerecognition_api_key == 'Enter-Your-Cloudsight-API-Key-Here' or istatus == 'false':
-						print('\n   Offline Mode Only ...   \n   No Cloudsight API Credentials Found ...   \n   To enable one-time recognition mode, open vision.py File. Go to lines 312 and 313. Supply your API keys ...   \n')
+						print('\n   No IoT API Credentials Found ...   \n   Loading Offline Recognition Mode ...   \n   To enable more specific but much slower online functionality, open vision.py File to supply your API keys ...   \n')
 						beep(238,333)
-						say('Offline mode only. No Cloudsight API credentials found. To enable one time recognition mode, open vision.py file. Go to lines 312 and 313. Supply your API keys. ')
+						say('No IoT API credentials found. Loading offline recognition mode. ')
+						if os.path.exists(path+'/checknumruns/8.txt'):
+							say('To enable more specific but much slower online functionality, open vision.py File to supply your API keys. ')
+						offlinerecognitionmode()
 						break
 
 				elif buttonpress == 4:
@@ -8007,7 +8859,7 @@ while 1:
 					if platform.system() == 'Windows':
 						print('\n   Initializing Pocket PC Mode.   \n   Deactivating VIsION ...   \n')
 						say('Initializing pocket PC mode. ')
-						os.system('narrator')
+						os.system('Start narrator')
 						time.sleep(2)
 						beep(338,333)
 						beep(238,222)
