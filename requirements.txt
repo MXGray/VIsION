@@ -2,7 +2,7 @@ requests==2.22.0
 yagmail[all]
 keyboard==0.13.3
 pyautogui==0.9.39
-opencv-python==3.4.5.20
+opencv-python==3.4.7.28
 pyaudio==0.2.11
 wave==0.0.2
 usb_iss==0.3.1
